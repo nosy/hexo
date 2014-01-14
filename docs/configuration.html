@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <link rel="stylesheet" href="/hexo/css/style.css">
   <link href="//fonts.googleapis.com/css?family=Lato:300,700" rel="stylesheet" type="text/css">
+  <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:400,700' rel='stylesheet' type='text/css'>
   <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   
 <script type="text/javascript">
@@ -30,10 +31,14 @@
         <a href="/hexo/" id="logo">Hexo</a>
       </h1>
       <nav id="main-nav">
-        <ul>
+        <ul id="main-nav-list">
           
             <li class="main-nav-item">
               <a href="/hexo/docs/" class="main-nav-link current">Docs</a>
+            </li>
+          
+            <li class="main-nav-item">
+              <a href="/hexo/api/classes/Hexo.html" class="main-nav-link">API</a>
             </li>
           
             <li class="main-nav-item">
@@ -55,12 +60,12 @@
 </header>
   <article class="page">
   <header id="page-banner">
-    <div class="outer">
-      <div class="inner">
-        <h1 class="page-title">Configuration</h1>
-      </div>
+  <div class="outer">
+    <div class="inner">
+      <h1 class="page-title">Configuration</h1>
     </div>
-  </header>
+  </div>
+</header>
   <div class="outer">
     <div class="inner">
   <select id="page-mobile-menu">
@@ -131,10 +136,14 @@
   </select>
 </div>
     <div class="page-content">
+      <div class="toc-wrap">
+        <strong class="toc-title">Contents</strong>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#configuration"><span class="toc-number">1.</span> <span class="toc-text">Configuration</span></a></li><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#site"><span class="toc-number">1.1.</span> <span class="toc-text">Site</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#url"><span class="toc-number">1.2.</span> <span class="toc-text">URL</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#writing"><span class="toc-number">1.3.</span> <span class="toc-text">Writing</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#category-tag"><span class="toc-number">1.4.</span> <span class="toc-text">Category &amp; Tag</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#archives"><span class="toc-number">1.5.</span> <span class="toc-text">Archives</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#server"><span class="toc-number">1.6.</span> <span class="toc-text">Server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#date-time-format"><span class="toc-number">1.7.</span> <span class="toc-text">Date / Time format</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#pagination"><span class="toc-number">1.8.</span> <span class="toc-text">Pagination</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#comment"><span class="toc-number">1.9.</span> <span class="toc-text">Comment</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#extensions"><span class="toc-number">1.10.</span> <span class="toc-text">Extensions</span></a></li></ol><li class="toc-item toc-level-2"><a class="toc-link" href="#default-configuration"><span class="toc-number">2.</span> <span class="toc-text">Default Configuration</span></a></li></ol>
+      </div>
       <div class="page-entry">
         <p>You can modify most of options in <code>_config.yml</code>.</p>
-<h2>Configuration</h2>
-<h3>Site</h3>
+<h2 id="configuration">Configuration</h2>
+<h3 id="site">Site</h3>
 <table>
 <thead>
 <tr>
@@ -169,7 +178,7 @@
 </tr>
 </tbody>
 </table>
-<h3>URL</h3>
+<h3 id="url">URL</h3>
 <table>
 <thead>
 <tr>
@@ -216,11 +225,11 @@
 </tr>
 </tbody>
 </table>
-<blockquote class="note info"><strong class="note-title">Website in subdirectory</strong><p>If your website is put in subdirectory such as <code>http://yoursite.com/blog</code>.   Set <code>url</code> as <code>http://yoursite.com/blog</code> and <code>root</code> as <code>/blog/</code>.</p>
+<blockquote class="note info"><strong class="note-title">Website insubdirectory</strong><p>If your website is put in subdirectory such as <code>http://yoursite.com/blog</code>.   Set <code>url</code> as <code>http://yoursite.com/blog</code> and <code>root</code> as <code>/blog/</code>.</p>
 </blockquote>
 
 
-<h3>Writing</h3>
+<h3 id="writing">Writing</h3>
 <table>
 <thead>
 <tr>
@@ -282,7 +291,7 @@
 </tr>
 </tbody>
 </table>
-<h3>Category &amp; Tag</h3>
+<h3 id="category-tag">Category &amp; Tag</h3>
 <table>
 <thead>
 <tr>
@@ -309,7 +318,7 @@
 </tr>
 </tbody>
 </table>
-<h3>Archives</h3>
+<h3 id="archives">Archives</h3>
 <table>
 <thead>
 <tr>
@@ -336,7 +345,7 @@
 </tr>
 </tbody>
 </table>
-<h3>Server</h3>
+<h3 id="server">Server</h3>
 <table>
 <thead>
 <tr>
@@ -363,7 +372,7 @@
 </tr>
 </tbody>
 </table>
-<h3>Date / Time format</h3>
+<h3 id="date-time-format">Date / Time format</h3>
 <p>Hexo uses <a href="http://momentjs.com/" target="_blank">Moment.js</a> to parse and display date.</p>
 <table>
 <thead>
@@ -386,7 +395,7 @@
 </tr>
 </tbody>
 </table>
-<h3>Pagination</h3>
+<h3 id="pagination">Pagination</h3>
 <table>
 <thead>
 <tr>
@@ -408,7 +417,7 @@
 </tr>
 </tbody>
 </table>
-<h3>Comment</h3>
+<h3 id="comment">Comment</h3>
 <table>
 <thead>
 <tr>
@@ -423,7 +432,7 @@
 </tr>
 </tbody>
 </table>
-<h3>Extensions</h3>
+<h3 id="extensions">Extensions</h3>
 <table>
 <thead>
 <tr>
@@ -442,64 +451,64 @@
 </tr>
 </tbody>
 </table>
-<blockquote class="note warn"><strong class="note-title">YAML format</strong><p>Don‘t use tabs in configuration files, use spaces instead. Also, add a space after colons. Configuration files parsing error may cause Hexo can’t run properly.</p>
+<blockquote class="note warn"><strong class="note-title">YAML format</strong><p>Don&#39;t use tabs in configuration files, use spaces instead. Also, add a space after colons. Configuration files parsing error may cause Hexo can&#39;t run properly.</p>
 </blockquote>
 
 
-<h2>Default Configuration</h2>
-<figure class="highlight lang-yaml"><pre><span class="method">title:</span> <span class="class">Hexo</span>
-<span class="method">subtitle:</span>
-<span class="method">description:</span>
-<span class="method">author:</span> <span class="class">John</span> <span class="class">Doe</span>
-<span class="method">email:</span>
-<span class="method">language:</span>
+<h2 id="default-configuration">Default Configuration</h2>
+<figure class="highlight yaml"><pre><span class="label">title:</span> Hexo
+<span class="label">subtitle:</span>
+<span class="label">description:</span>
+<span class="label">author:</span> John Doe
+<span class="label">email:</span>
+<span class="label">language:</span>
 
-<span class="method">url:</span> <span class="method">http:</span>//yoursite.com
-<span class="method">root:</span> /
-<span class="method">permalink:</span> :year/:month/:day/:title/
-<span class="method">tag_dir:</span> tags
-<span class="method">archive_dir:</span> archives
-<span class="method">category_dir:</span> categories
-<span class="method">code_dir:</span> downloads/code
+<span class="label">url:</span> http://yoursite<span class="preprocessor">.com</span>
+<span class="label">root:</span> /
+<span class="label">permalink:</span> :year/:month/:day/:title/
+<span class="label">tag_dir:</span> tags
+<span class="label">archive_dir:</span> archives
+<span class="label">category_dir:</span> categories
+<span class="label">code_dir:</span> downloads/code
 
-<span class="method">new_post_name:</span> :title.md
-<span class="method">default_layout:</span> post
-<span class="method">auto_spacing:</span> <span class="keyword">false</span>
-<span class="method">titlecase:</span> <span class="keyword">false</span>
-<span class="method">max_open_file:</span> <span class="number">100</span>
-<span class="method">multi_thread:</span> <span class="keyword">true</span>
-<span class="method">filename_case:</span> <span class="number">0</span>
-<span class="method">render_drafts:</span> <span class="keyword">false</span>
-<span class="method">highlight:</span>
-  <span class="method">enable:</span> <span class="keyword">true</span>
-  <span class="method">line_number:</span> <span class="keyword">true</span>
-  <span class="method">tab_replace:</span>
+<span class="label">new_post_name:</span> :title<span class="preprocessor">.md</span>
+<span class="label">default_layout:</span> post
+<span class="label">auto_spacing:</span> false
+<span class="label">titlecase:</span> false
+<span class="label">max_open_file:</span> <span class="number">100</span>
+<span class="label">multi_thread:</span> true
+<span class="label">filename_case:</span> <span class="number">0</span>
+<span class="label">render_drafts:</span> false
+<span class="label">highlight:</span>
+  enable: true
+  line_number: true
+  tab_replace:
 
-<span class="method">default_category:</span> uncategorized
-<span class="method">category_map:</span>
-<span class="method">tag_map:</span>
+<span class="label">default_category:</span> uncategorized
+<span class="label">category_map:</span>
+<span class="label">tag_map:</span>
 
-<span class="method">archive:</span> <span class="number">2</span>
-<span class="method">category:</span> <span class="number">2</span>
-<span class="method">tag:</span> <span class="number">2</span>
+<span class="label">archive:</span> <span class="number">2</span>
+<span class="label">category:</span> <span class="number">2</span>
+<span class="label">tag:</span> <span class="number">2</span>
 
-<span class="method">port:</span> <span class="number">4000</span>
-<span class="method">logger:</span> <span class="keyword">false</span>
-<span class="method">logger_format:</span>
+<span class="label">port:</span> <span class="number">4000</span>
+<span class="label">logger:</span> false
+<span class="label">logger_format:</span>
 
-<span class="method">date_format:</span> <span class="class">MMM</span> <span class="class">D</span> <span class="class">YYYY</span>
-<span class="method">time_format:</span> <span class="class">H</span>:<span class="method">mm:</span>ss
+<span class="label">date_format:</span> MMM D YYYY
+<span class="label">time_format:</span> H:mm:ss
 
-<span class="method">per_page:</span> <span class="number">10</span>
-<span class="method">pagination_dir:</span> page
+<span class="label">per_page:</span> <span class="number">10</span>
+<span class="label">pagination_dir:</span> page
 
-<span class="method">disqus_shortname:</span>
+<span class="label">disqus_shortname:</span>
 
-<span class="method">theme:</span> light
-<span class="method">exclude_generator:</span>
+<span class="label">theme:</span> light
+<span class="label">exclude_generator:</span>
 
-<span class="method">deploy:</span>
-  <span class="method">type:</span>
+<span class="label">deploy:</span>
+  type:
 </pre></figure>
 
 

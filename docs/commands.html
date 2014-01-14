@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <link rel="stylesheet" href="/hexo/css/style.css">
   <link href="//fonts.googleapis.com/css?family=Lato:300,700" rel="stylesheet" type="text/css">
+  <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:400,700' rel='stylesheet' type='text/css'>
   <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   
 <script type="text/javascript">
@@ -30,10 +31,14 @@
         <a href="/hexo/" id="logo">Hexo</a>
       </h1>
       <nav id="main-nav">
-        <ul>
+        <ul id="main-nav-list">
           
             <li class="main-nav-item">
               <a href="/hexo/docs/" class="main-nav-link current">Docs</a>
+            </li>
+          
+            <li class="main-nav-item">
+              <a href="/hexo/api/classes/Hexo.html" class="main-nav-link">API</a>
             </li>
           
             <li class="main-nav-item">
@@ -55,12 +60,12 @@
 </header>
   <article class="page">
   <header id="page-banner">
-    <div class="outer">
-      <div class="inner">
-        <h1 class="page-title">Commands</h1>
-      </div>
+  <div class="outer">
+    <div class="inner">
+      <h1 class="page-title">Commands</h1>
     </div>
-  </header>
+  </div>
+</header>
   <div class="outer">
     <div class="inner">
   <select id="page-mobile-menu">
@@ -131,20 +136,24 @@
   </select>
 </div>
     <div class="page-content">
+      <div class="toc-wrap">
+        <strong class="toc-title">Contents</strong>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#init"><span class="toc-number">1.</span> <span class="toc-text">init</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#new"><span class="toc-number">2.</span> <span class="toc-text">new</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#generate"><span class="toc-number">3.</span> <span class="toc-text">generate</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#publish"><span class="toc-number">4.</span> <span class="toc-text">publish</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#server"><span class="toc-number">5.</span> <span class="toc-text">server</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#deploy"><span class="toc-number">6.</span> <span class="toc-text">deploy</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#render"><span class="toc-number">7.</span> <span class="toc-text">render</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#migrate"><span class="toc-number">8.</span> <span class="toc-text">migrate</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#clean"><span class="toc-number">9.</span> <span class="toc-text">clean</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#list"><span class="toc-number">10.</span> <span class="toc-text">list</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#version"><span class="toc-number">11.</span> <span class="toc-text">version</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#options"><span class="toc-number">12.</span> <span class="toc-text">Options</span></a></li><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#safe-mode"><span class="toc-number">12.1.</span> <span class="toc-text">Safe mode</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#debug-mode"><span class="toc-number">12.2.</span> <span class="toc-text">Debug mode</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#silent-mode"><span class="toc-number">12.3.</span> <span class="toc-text">Silent mode</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#customize-config-file-path"><span class="toc-number">12.4.</span> <span class="toc-text">Customize config file path</span></a></li></ol>
+      </div>
       <div class="page-entry">
-        <h2>init</h2>
-<figure class="highlight lang-bash"><pre>$ hexo init [folder]
+        <h2 id="init">init</h2>
+<figure class="highlight bash"><pre>$ hexo init [folder]
 </pre></figure>
 
 <p>Setups a website. If <code>folder</code> isn&#39;t defined, Hexo will setup the website at the current directory.</p>
-<h2>new</h2>
-<figure class="highlight lang-bash"><pre>$ hexo new [layout] &lt;title&gt;
+<h2 id="new">new</h2>
+<figure class="highlight bash"><pre>$ hexo new [layout] &lt;title&gt;
 </pre></figure>
 
-<p>Creates a new article. If <code>layout</code> isn‘t defined, it’ll be <code>default_layout</code> setting. If the title is more than one word, wrap it with quotation marks.</p>
+<p>Creates a new article. If <code>layout</code> isn&#39;t defined, it&#39;ll be <code>default_layout</code> setting. If the title is more than one word, wrap it with quotation marks.</p>
 <p><strong>Alias:</strong> n</p>
-<h2>generate</h2>
-<figure class="highlight lang-bash"><pre>$ hexo generate
+<h2 id="generate">generate</h2>
+<figure class="highlight bash"><pre>$ hexo generate
 </pre></figure>
 
 <p>Generates static files.</p>
@@ -167,14 +176,14 @@
 </tr>
 </tbody>
 </table>
-<h2>publish</h2>
-<figure class="highlight lang-bash"><pre>$ hexo publish &lt;filename&gt;
+<h2 id="publish">publish</h2>
+<figure class="highlight bash"><pre>$ hexo publish &lt;filename&gt;
 </pre></figure>
 
 <p>Publishes a draft.</p>
 <p><strong>Alias</strong>: p</p>
-<h2>server</h2>
-<figure class="highlight lang-bash"><pre>$ hexo server
+<h2 id="server">server</h2>
+<figure class="highlight bash"><pre>$ hexo server
 </pre></figure>
 
 <p>Starts server.</p>
@@ -205,8 +214,8 @@
 </tr>
 </tbody>
 </table>
-<h2>deploy</h2>
-<figure class="highlight lang-bash"><pre>$ hexo deploy
+<h2 id="deploy">deploy</h2>
+<figure class="highlight bash"><pre>$ hexo deploy
 </pre></figure>
 
 <p>Deploys your website.</p>
@@ -229,8 +238,8 @@
 </tr>
 </tbody>
 </table>
-<h2>render</h2>
-<figure class="highlight lang-bash"><pre>$ hexo render &lt;file1&gt; [file2] ...
+<h2 id="render">render</h2>
+<figure class="highlight bash"><pre>$ hexo render &lt;file1&gt; [file2] ...
 </pre></figure>
 
 <p>Renders files.</p>
@@ -248,41 +257,51 @@
 </tr>
 </tbody>
 </table>
-<h2>migrate</h2>
-<figure class="highlight lang-bash"><pre>$ hexo migrate &lt;type&gt;
+<h2 id="migrate">migrate</h2>
+<figure class="highlight bash"><pre>$ hexo migrate &lt;<span class="built_in">type</span>&gt;
 </pre></figure>
 
 <p>Migrates from other blog systems.</p>
-<h2>clean</h2>
-<figure class="highlight lang-bash"><pre>$ hexo clean
+<h2 id="clean">clean</h2>
+<figure class="highlight bash"><pre>$ hexo clean
 </pre></figure>
 
 <p>Cleans the cache file (<code>db.json</code>) and generated files (<code>public</code>).</p>
-<h2>list</h2>
-<figure class="highlight lang-bash"><pre>$ hexo list &lt;type&gt;
+<h2 id="list">list</h2>
+<figure class="highlight bash"><pre>$ hexo list &lt;<span class="built_in">type</span>&gt;
 </pre></figure>
 
 <p>Lists all routes.</p>
-<h2>version</h2>
-<figure class="highlight lang-bash"><pre>$ hexo version
+<h2 id="version">version</h2>
+<figure class="highlight bash"><pre>$ hexo version
 </pre></figure>
 
 <p>Displays version information.</p>
-<h2>Options</h2>
-<h3>Safe mode</h3>
-<figure class="highlight lang-bash"><pre>$ hexo --safe
+<h2 id="options">Options</h2>
+<h3 id="safe-mode">Safe mode</h3>
+<figure class="highlight bash"><pre>$ hexo --safe
 </pre></figure>
 
 <p>Plugins and scripts won&#39;t be loaded in safe mode. You can try this when you encounter some problems after installing a new plugin.</p>
-<h3>Debug mode</h3>
-<figure class="highlight lang-bash"><pre>$ hexo --debug
+<h3 id="debug-mode">Debug mode</h3>
+<figure class="highlight bash"><pre>$ hexo --debug
 </pre></figure>
 
 <p>Displays verbose messages in terminal and saves log in <code>debug.log</code>. When you get some problems, try to run Hexo again in debug mode and submit the messages to GitHub.</p>
+<h3 id="silent-mode">Silent mode</h3>
+<figure class="highlight bash"><pre>$ hexo --silent
+</pre></figure>
+
+<p>Hides output on console.</p>
+<h3 id="customize-config-file-path">Customize config file path</h3>
+<figure class="highlight bash"><pre>$ hexo --config custom.yml
+</pre></figure>
+
+<p>Customize config file path instead of <code>_config.yml</code>.</p>
 
       </div>
       <footer id="page-footer">
-        <time id="page-footer-updated" datetime="2013-10-26T15:22:42.000Z">Last updated: Oct 26, 2013</time>
+        <time id="page-footer-updated" datetime="2014-01-13T05:01:19.000Z">Last updated: Jan 13, 2014</time>
         <a href="/hexo/docs/configuration.html" id="page-footer-prev" class="page-footer-link">Prev</a>
         <a href="/hexo/docs/migration.html" id="page-footer-next" class="page-footer-link">Next</a>
       </footer>

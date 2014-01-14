@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <link rel="stylesheet" href="/hexo/css/style.css">
   <link href="//fonts.googleapis.com/css?family=Lato:300,700" rel="stylesheet" type="text/css">
+  <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:400,700' rel='stylesheet' type='text/css'>
   <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   
 <script type="text/javascript">
@@ -30,10 +31,14 @@
         <a href="/hexo/" id="logo">Hexo</a>
       </h1>
       <nav id="main-nav">
-        <ul>
+        <ul id="main-nav-list">
           
             <li class="main-nav-item">
               <a href="/hexo/docs/" class="main-nav-link current">Docs</a>
+            </li>
+          
+            <li class="main-nav-item">
+              <a href="/hexo/api/classes/Hexo.html" class="main-nav-link">API</a>
             </li>
           
             <li class="main-nav-item">
@@ -55,12 +60,12 @@
 </header>
   <article class="page">
   <header id="page-banner">
-    <div class="outer">
-      <div class="inner">
-        <h1 class="page-title">Pagination</h1>
-      </div>
+  <div class="outer">
+    <div class="inner">
+      <h1 class="page-title">Pagination</h1>
     </div>
-  </header>
+  </div>
+</header>
   <div class="outer">
     <div class="inner">
   <select id="page-mobile-menu">
@@ -131,10 +136,14 @@
   </select>
 </div>
     <div class="page-content">
+      <div class="toc-wrap">
+        <strong class="toc-title">Contents</strong>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#basic"><span class="toc-number">1.</span> <span class="toc-text">Basic</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#paginator-helper"><span class="toc-number">2.</span> <span class="toc-text">Paginator helper</span></a></li></ol>
+      </div>
       <div class="page-entry">
-        <p>When there‘re many posts in your blog, it’s useful to separate into several pages. Hexo supports pagination. The following is how you can use pagination in Hexo.</p>
+        <p>When there&#39;re many posts in your blog, it&#39;s useful to separate into several pages. Hexo supports pagination. The following is how you can use pagination in Hexo.</p>
 <p>Before we start, you have to enable pagination. Edit <code>per_page</code> setting to change how many posts displayed in a single page. To disable pagination, just set it to <code>0</code>.</p>
-<figure class="highlight lang-yaml"><pre><span class="attribute">per_page</span>: <span class="string">10</span>
+<figure class="highlight yaml"><pre><span class="attribute">per_page</span>: <span class="string">10</span>
 </pre></figure>
 
 <p>You can edit the following setting to enable or disable pagination for specific pages. </p>
@@ -143,24 +152,24 @@
 <li>1: Disable pagination</li>
 <li>0: Fully disable</li>
 </ul>
-<figure class="highlight lang-yaml"><pre><span class="attribute">archive</span>: <span class="string">2</span>
+<figure class="highlight yaml"><pre><span class="attribute">archive</span>: <span class="string">2</span>
 <span class="attribute">category</span>: <span class="string">2</span>
 <span class="attribute">tag</span>: <span class="string">2</span>
 </pre></figure>
 
-<h2>Basic</h2>
-<p>The most basic pagination is just two links: “Previous page” &amp; “Next page”. For example:</p>
-<figure class="highlight"><pre>&lt;% <span class="keyword">if</span> (page.prev){ %&gt;
-  <span class="xml"><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"&lt;%- config.root %&gt;&lt;%- page.prev_link %&gt;"</span>&gt;</span>Prev<span class="tag">&lt;/<span class="title">a</span>&gt;</span>
+<h2 id="basic">Basic</h2>
+<p>The most basic pagination is just two links: &quot;Previous page&quot; &amp; &quot;Next page&quot;. For example:</p>
+<figure class="highlight"><pre><span class="vbscript">&lt;% <span class="keyword">if</span> (page.prev){ %&gt;</span>
+  <span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"&lt;%- config.root %&gt;&lt;%- page.prev_link %&gt;"</span>&gt;</span>Prev<span class="tag">&lt;/<span class="title">a</span>&gt;</span>
 <span class="vbscript">&lt;% } %&gt;</span>
 <span class="vbscript">&lt;% <span class="keyword">if</span> (page.<span class="keyword">next</span>){ %&gt;</span>
   <span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"&lt;%- config.root %&gt;&lt;%- page.next_link %&gt;"</span>&gt;</span>Next<span class="tag">&lt;/<span class="title">a</span>&gt;</span>
-<span class="vbscript">&lt;% } %&gt;</span></span>
+<span class="vbscript">&lt;% } %&gt;</span>
 </pre></figure>
 
-<h2>Paginator helper</h2>
+<h2 id="paginator-helper">Paginator helper</h2>
 <p>To display pagination in number. You can use paginator helper. It helps you insert pagination fast.</p>
-<figure class="highlight"><pre>&lt;<span class="string">%- paginator() %&gt;
+<figure class="highlight"><pre>&lt;<span class="variable">%-</span> paginator() <span class="variable">%&gt;</span>
 </pre></figure>
 
 

@@ -93,8 +93,8 @@ a img {
   font-family: FontAwesome;
   font-style: normal;
   font-weight: normal;
-  src: url("fonts/fontawesome-webfont.eot?v=#3.2.1");
-  src: url("fonts/fontawesome-webfont.eot?#iefix&v=#3.2.1") format("embedded-opentype"), url("fonts/fontawesome-webfont.woff?v=#3.2.1") format("woff"), url("fonts/fontawesome-webfont.ttf?v=#3.2.1") format("truetype"), url("fonts/fontawesome-webfont.svg#fontawesomeregular?v=#3.2.1") format("svg");
+  src: url("fonts/fontawesome-webfont.eot?v=#4.0.3");
+  src: url("fonts/fontawesome-webfont.eot?#iefix&v=#4.0.3") format("embedded-opentype"), url("fonts/fontawesome-webfont.woff?v=#4.0.3") format("woff"), url("fonts/fontawesome-webfont.ttf?v=#4.0.3") format("truetype"), url("fonts/fontawesome-webfont.svg#fontawesomeregular?v=#4.0.3") format("svg");
 }
 body {
   width: 100%;
@@ -156,6 +156,7 @@ body {
 }
 #main-nav {
   float: right;
+  text-align: center;
 }
 @media screen and (max-width: 768px) {
   #main-nav {
@@ -163,19 +164,19 @@ body {
     margin-top: 20px;
   }
 }
+#main-nav-list {
+  margin: 0 auto;
+  width: auto;
+}
 .main-nav-item {
-  float: left;
   padding-left: 50px;
   padding-top: 13px;
-  text-align: center;
+  display: inline-block;
 }
 @media screen and (max-width: 768px) {
   .main-nav-item {
-    display: inline;
-    float: left;
-    width: 22.54901960784314%;
-    margin: 0 1.2254901960784315%;
-    padding-left: 0;
+    padding-left: 25px;
+    padding-right: 25px;
   }
 }
 .main-nav-link {
@@ -197,7 +198,7 @@ body {
   border-color: #555;
 }
 #page-banner {
-  background: url("images/shattered.png");
+  background: url("images/shattered.png") #ddd;
   padding: 40px 0;
 }
 @media screen and (max-width: 768px) {
@@ -228,6 +229,7 @@ body {
 }
 .page-entry {
   line-height: 1.6em;
+  color: #444;
 }
 .page-entry p,
 .page-entry ol,
@@ -255,8 +257,8 @@ body {
 .page-entry h5,
 .page-entry h6 {
   line-height: 1em;
-  margin: 1em 0;
   font-weight: bold;
+  margin: 1em 0;
 }
 .page-entry a {
   color: #0e83cd;
@@ -297,7 +299,7 @@ body {
 .page-entry dl {
   list-style: square;
 }
-.page-entry li p:first-child {
+.page-entry li p {
   margin: 0;
 }
 .page-entry li table,
@@ -364,7 +366,7 @@ body {
   font-weight: bold;
 }
 .page-entry table {
-  width: 100%;
+  max-width: 100%;
   border: 1px solid #ddd;
 }
 .page-entry table th {
@@ -479,8 +481,143 @@ body {
     display: block;
   }
 }
+.toc-wrap {
+  float: right;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  background: #eee;
+  border: 1px solid #ddd;
+  margin: 1.6em 0 1em 2em;
+  padding: 10px 15px;
+  line-height: 1.6em;
+}
+.toc-title {
+  font-weight: bold;
+  color: #444;
+}
+.toc-link {
+  color: #0e83cd;
+  text-decoration: none;
+  font-size: 0.9em;
+}
+.toc-link:hover {
+  text-decoration: underline;
+}
+.toc-child {
+  margin-left: 1em;
+}
+#api-header {
+  zoom: 1;
+  margin: 1.6em 0;
+}
+#api-header:before,
+#api-header:after {
+  content: "";
+  display: table;
+}
+#api-header:after {
+  clear: both;
+}
+#api-title {
+  color: #444;
+  font-size: 2em;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+.api-meta {
+  color: #999;
+  font-size: 0.85em;
+  line-height: 1.6em;
+  float: left;
+}
+.api-meta a {
+  color: #0e83cd;
+  text-decoration: none;
+}
+.api-meta a:hover {
+  text-decoration: underline;
+}
+.api-options {
+  float: right;
+  font-size: 0.85em;
+  color: #444;
+}
+.api-section-title {
+  border-top: 1px solid #ddd;
+  padding-top: 1em;
+}
+.api-item {
+  margin: 2.5em 0;
+}
+.api-item.private,
+.api-item.protected,
+.api-item.deprecated {
+  display: none;
+}
+.api-item-title {
+  font-weight: normal;
+  margin-bottom: 6px;
+  display: inline;
+  font-family: "Source Code Pro", Monaco, Menlo, Consolas, monospace;
+}
+.api-item-title a {
+  color: #444;
+}
+.api-item-params {
+  font-family: "Source Code Pro", Monaco, Menlo, Consolas, monospace;
+}
+.api-deprecated-msg {
+  margin: 1.6em 0;
+  color: #444;
+}
+.api-deprecated-msg:before {
+  content: "\f06a";
+  color: #f00;
+  font-family: FontAwesome;
+}
+.api-deprecated-msg strong {
+  font-weight: bold;
+  color: #f00;
+}
+.api-item-type {
+  color: #999;
+}
+.api-item-type a,
+.api-item-type span {
+  border-bottom: 1px dotted #999;
+}
+.api-item-type a:hover {
+  text-decoration: none;
+}
+.api-item-type span {
+  color: #444;
+}
+.api-item-flag {
+  background: #999;
+  color: #fff;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  font-size: 0.85em;
+  margin: 0 6px;
+  padding: 3px 5px;
+}
+.api-item-meta {
+  color: #999;
+  font-size: 0.85em;
+  line-height: 1.6em;
+}
+.api-item-meta a {
+  color: #0e83cd;
+  text-decoration: none;
+}
+.api-item-meta a:hover {
+  text-decoration: underline;
+}
+.api-item-subtitle {
+  margin: 1.6em 0;
+}
 body.index {
-  background: url("images/shattered.png");
+  background: url("images/shattered.png") #ddd;
 }
 #banner {
   padding-top: 150px;
@@ -507,7 +644,7 @@ body.index {
 #banner-getting-started-prefix {
   float: left;
   background: #c8c8c8;
-  font-family: Monaco, Menlo, Consolas, monospace;
+  font-family: "Source Code Pro", Monaco, Menlo, Consolas, monospace;
   font-size: 16px;
   padding-left: 15px;
   color: #999;
@@ -517,7 +654,7 @@ body.index {
   float: left;
   background: #c8c8c8;
   font-size: 16px;
-  font-family: Monaco, Menlo, Consolas, monospace;
+  font-family: "Source Code Pro", Monaco, Menlo, Consolas, monospace;
   color: #555;
   border: none;
   padding: 0 15px;
@@ -615,7 +752,7 @@ body.index {
 }
 pre,
 code {
-  font-family: Monaco, Menlo, Consolas, monospace;
+  font-family: "Source Code Pro", Monaco, Menlo, Consolas, monospace;
   color: #4d4d4c;
   background: #eee;
   font-size: 13px;

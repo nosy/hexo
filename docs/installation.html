@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <link rel="stylesheet" href="/hexo/css/style.css">
   <link href="//fonts.googleapis.com/css?family=Lato:300,700" rel="stylesheet" type="text/css">
+  <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:400,700' rel='stylesheet' type='text/css'>
   <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   
 <script type="text/javascript">
@@ -30,10 +31,14 @@
         <a href="/hexo/" id="logo">Hexo</a>
       </h1>
       <nav id="main-nav">
-        <ul>
+        <ul id="main-nav-list">
           
             <li class="main-nav-item">
               <a href="/hexo/docs/" class="main-nav-link current">Docs</a>
+            </li>
+          
+            <li class="main-nav-item">
+              <a href="/hexo/api/classes/Hexo.html" class="main-nav-link">API</a>
             </li>
           
             <li class="main-nav-item">
@@ -55,12 +60,12 @@
 </header>
   <article class="page">
   <header id="page-banner">
-    <div class="outer">
-      <div class="inner">
-        <h1 class="page-title">Installation</h1>
-      </div>
+  <div class="outer">
+    <div class="inner">
+      <h1 class="page-title">Installation</h1>
     </div>
-  </header>
+  </div>
+</header>
   <div class="outer">
     <div class="inner">
   <select id="page-mobile-menu">
@@ -131,16 +136,20 @@
   </select>
 </div>
     <div class="page-content">
+      <div class="toc-wrap">
+        <strong class="toc-title">Contents</strong>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#requirements"><span class="toc-number">1.</span> <span class="toc-text">Requirements</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#step-1-install-git"><span class="toc-number">2.</span> <span class="toc-text">Step 1: Install Git</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#step-2-install-node-js"><span class="toc-number">3.</span> <span class="toc-text">Step 2: Install Node.js</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#step-3-install-hexo"><span class="toc-number">4.</span> <span class="toc-text">Step 3: Install Hexo</span></a></li></ol>
+      </div>
       <div class="page-entry">
         <p>It only takes few minutes for you to get Hexo ready. If you encounter any problems on installation and you can&#39;t find the solution here. Please <a href="https://github.com/tommy351/hexo/issues" target="_blank">submit an issue</a> and I&#39;ll try to solve your problems.</p>
-<h2>Requirements</h2>
+<h2 id="requirements">Requirements</h2>
 <p>Installing Hexo is quite easy. However, there&#39;re something required before you get started.</p>
 <ul>
 <li><a href="http://nodejs.org/" target="_blank">Node.js</a></li>
 <li><a href="http://git-scm.com/" target="_blank">Git</a></li>
 </ul>
 <p>If your computer has been installed the requirements above already. Congratulations! Just install Hexo with npm.</p>
-<figure class="highlight lang-bash"><pre>$ npm install -g hexo
+<figure class="highlight bash"><pre>$ npm install -g hexo
 </pre></figure>
 
 <p>If not, please follow the following instructions to install all the requirements.</p>
@@ -148,38 +157,37 @@
 </blockquote>
 
 
-<h2>1. Install Git</h2>
+<h2 id="step-1-install-git">Step 1: Install Git</h2>
 <ul>
 <li>Windows: Download &amp; install <a href="http://code.google.com/p/msysgit/" target="_blank">msysgit</a>.</li>
 <li>Mac: Install it with <a href="http://mxcl.github.com/homebrew/" target="_blank">Homebrew</a>, <a href="http://www.macports.org/" target="_blank">MacPorts</a> or <a href="http://code.google.com/p/git-osx-installer/" target="_blank">installer</a>.</li>
 <li>Linux (Ubuntu, Debian): <code>sudo apt-get install git-core</code></li>
 <li>Linux (Fedora, Red Hat, CentOS): <code>sudo yum install git-core</code></li>
 </ul>
-<h2>2. Install Node.js</h2>
+<h2 id="step-2-install-node-js">Step 2: Install Node.js</h2>
 <p>The best way to install Node.js is installing with <a href="https://github.com/creationix/nvm" target="_blank">nvm</a>.</p>
 <p>cURL:</p>
-<figure class="highlight lang-bash"><pre>$ curl https://raw.github.com/creationix/nvm/master/install.sh | sh
+<figure class="highlight bash"><pre>$ curl https://raw.github.com/creationix/nvm/master/install.sh | sh
 </pre></figure>
 
 <p>Wget:</p>
-<figure class="highlight lang-bash"><pre>$ wget -qO- https://raw.github.com/creationix/nvm/master/install.sh | sh
+<figure class="highlight bash"><pre>$ wget -qO- https://raw.github.com/creationix/nvm/master/install.sh | sh
 </pre></figure>
 
 <p>Once installed, restart the terminal and run the following command to install Node.js.</p>
-<figure class="highlight lang-bash"><pre>$ nvm install 0.10
+<figure class="highlight bash"><pre>$ nvm install <span class="number">0.10</span>
 </pre></figure>
 
-
 <p>Or you can download the <a href="http://nodejs.org/" target="_blank">installer</a> and install it.</p>
-<h2>3. Install Hexo</h2>
+<h2 id="step-3-install-hexo">Step 3: Install Hexo</h2>
 <p>Once all the requirements are installed, you can install Hexo with npm.</p>
-<figure class="highlight lang-bash"><pre>$ npm install -g hexo
+<figure class="highlight bash"><pre>$ npm install -g hexo
 </pre></figure>
 
 
       </div>
       <footer id="page-footer">
-        <time id="page-footer-updated" datetime="2013-08-24T15:04:46.000Z">Last updated: Aug 24, 2013</time>
+        <time id="page-footer-updated" datetime="2014-01-14T07:59:15.000Z">Last updated: Jan 14, 2014</time>
         <a href="/hexo/docs/index.html" id="page-footer-prev" class="page-footer-link">Prev</a>
         <a href="/hexo/docs/setup.html" id="page-footer-next" class="page-footer-link">Next</a>
       </footer>

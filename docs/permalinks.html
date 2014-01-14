@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <link rel="stylesheet" href="/hexo/css/style.css">
   <link href="//fonts.googleapis.com/css?family=Lato:300,700" rel="stylesheet" type="text/css">
+  <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:400,700' rel='stylesheet' type='text/css'>
   <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   
 <script type="text/javascript">
@@ -30,10 +31,14 @@
         <a href="/hexo/" id="logo">Hexo</a>
       </h1>
       <nav id="main-nav">
-        <ul>
+        <ul id="main-nav-list">
           
             <li class="main-nav-item">
               <a href="/hexo/docs/" class="main-nav-link current">Docs</a>
+            </li>
+          
+            <li class="main-nav-item">
+              <a href="/hexo/api/classes/Hexo.html" class="main-nav-link">API</a>
             </li>
           
             <li class="main-nav-item">
@@ -55,12 +60,12 @@
 </header>
   <article class="page">
   <header id="page-banner">
-    <div class="outer">
-      <div class="inner">
-        <h1 class="page-title">Permalinks</h1>
-      </div>
+  <div class="outer">
+    <div class="inner">
+      <h1 class="page-title">Permalinks</h1>
     </div>
-  </header>
+  </div>
+</header>
   <div class="outer">
     <div class="inner">
   <select id="page-mobile-menu">
@@ -131,9 +136,13 @@
   </select>
 </div>
     <div class="page-content">
+      <div class="toc-wrap">
+        <strong class="toc-title">Contents</strong>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#variables"><span class="toc-number">1.</span> <span class="toc-text">Variables</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#examples"><span class="toc-number">2.</span> <span class="toc-text">Examples</span></a></li></ol>
+      </div>
       <div class="page-entry">
         <p>You can specify the permalinks for your site in <code>_config.yml</code> or in the front-matter for each post.</p>
-<h3>Variables</h3>
+<h3 id="variables">Variables</h3>
 <table>
 <thead>
 <tr>
@@ -168,13 +177,13 @@
 </tr>
 </tbody>
 </table>
-<h3>Examples</h3>
+<h3 id="examples">Examples</h3>
 <p>Given a post named <code>hello-world.md</code> in <code>source/_posts</code> folder with   the following content.</p>
-<figure class="highlight lang-yaml"><pre><span class="title">title</span>: <span class="type">Hello</span> <span class="type">World</span>
-<span class="title">date</span>: <span class="number">2013</span>-<span class="number">07</span>-<span class="number">14</span> <span class="number">17</span>:<span class="number">01</span>:<span class="number">34</span>
-<span class="title">categories</span>: 
-- foo
-- bar
+<figure class="highlight yaml"><pre>title: Hello World
+date: 2013-07-14 17:01:34
+categories: 
+-<span class="ruby"> foo
+</span>-<span class="ruby"> bar</span>
 </pre></figure>
 
 <table>
@@ -202,7 +211,7 @@
 
       </div>
       <footer id="page-footer">
-        <time id="page-footer-updated" datetime="2013-10-26T15:33:46.000Z">Last updated: Oct 26, 2013</time>
+        <time id="page-footer-updated" datetime="2013-08-24T17:27:53.000Z">Last updated: Aug 25, 2013</time>
         <a href="/hexo/docs/deployment.html" id="page-footer-prev" class="page-footer-link">Prev</a>
         <a href="/hexo/docs/themes.html" id="page-footer-next" class="page-footer-link">Next</a>
       </footer>

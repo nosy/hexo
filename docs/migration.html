@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <link rel="stylesheet" href="/hexo/css/style.css">
   <link href="//fonts.googleapis.com/css?family=Lato:300,700" rel="stylesheet" type="text/css">
+  <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:400,700' rel='stylesheet' type='text/css'>
   <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   
 <script type="text/javascript">
@@ -30,10 +31,14 @@
         <a href="/hexo/" id="logo">Hexo</a>
       </h1>
       <nav id="main-nav">
-        <ul>
+        <ul id="main-nav-list">
           
             <li class="main-nav-item">
               <a href="/hexo/docs/" class="main-nav-link current">Docs</a>
+            </li>
+          
+            <li class="main-nav-item">
+              <a href="/hexo/api/classes/Hexo.html" class="main-nav-link">API</a>
             </li>
           
             <li class="main-nav-item">
@@ -55,12 +60,12 @@
 </header>
   <article class="page">
   <header id="page-banner">
-    <div class="outer">
-      <div class="inner">
-        <h1 class="page-title">Migration</h1>
-      </div>
+  <div class="outer">
+    <div class="inner">
+      <h1 class="page-title">Migration</h1>
     </div>
-  </header>
+  </div>
+</header>
   <div class="outer">
     <div class="inner">
   <select id="page-mobile-menu">
@@ -131,33 +136,37 @@
   </select>
 </div>
     <div class="page-content">
+      <div class="toc-wrap">
+        <strong class="toc-title">Contents</strong>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#rss"><span class="toc-number">1.</span> <span class="toc-text">RSS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#jekyll"><span class="toc-number">2.</span> <span class="toc-text">Jekyll</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#octopress"><span class="toc-number">3.</span> <span class="toc-text">Octopress</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#wordpress"><span class="toc-number">4.</span> <span class="toc-text">WordPress</span></a></li></ol>
+      </div>
       <div class="page-entry">
-        <h2>RSS</h2>
+        <h2 id="rss">RSS</h2>
 <p>First, install <code>hexo-migrator-rss</code> plugin.</p>
-<figure class="highlight lang-bash"><pre>$ npm install hexo-migrator-rss --save
+<figure class="highlight bash"><pre>$ npm install hexo-migrator-rss --save
 </pre></figure>
 
 <p>Once the plugin is installed, run the following command to migrate all posts from RSS. <code>source</code> can be the file path or URL.</p>
-<figure class="highlight lang-bash"><pre>$ hexo migrate rss &lt;source&gt;
+<figure class="highlight bash"><pre>$ hexo migrate rss &lt;<span class="built_in">source</span>&gt;
 </pre></figure>
 
-<h2>Jekyll</h2>
+<h2 id="jekyll">Jekyll</h2>
 <p>Move all files in <code>_posts</code> folder to <code>source/_posts</code> folder and modify <code>new_post_name</code> setting in <code>_config.yml</code>.</p>
-<figure class="highlight lang-yaml"><pre><span class="symbol">new_post_name:</span> <span class="symbol">:year-</span><span class="symbol">:month-</span><span class="symbol">:day-</span><span class="symbol">:title</span>.md
+<figure class="highlight yaml"><pre><span class="symbol">new_post_name:</span> <span class="symbol">:year-</span><span class="symbol">:month-</span><span class="symbol">:day-</span><span class="symbol">:title</span>.md
 </pre></figure>
 
-<h2>Octopress</h2>
+<h2 id="octopress">Octopress</h2>
 <p>Move all files in <code>source/_posts</code> folder of Octopress to <code>source/_posts</code> of Hexo and modify <code>new_post_name</code> setting in <code>_config.yml</code>.</p>
-<figure class="highlight lang-yaml"><pre><span class="symbol">new_post_name:</span> <span class="symbol">:year-</span><span class="symbol">:month-</span><span class="symbol">:day-</span><span class="symbol">:title</span>.md
+<figure class="highlight yaml"><pre><span class="symbol">new_post_name:</span> <span class="symbol">:year-</span><span class="symbol">:month-</span><span class="symbol">:day-</span><span class="symbol">:title</span>.md
 </pre></figure>
 
-<h2>WordPress</h2>
+<h2 id="wordpress">WordPress</h2>
 <p>First, install <code>hexo-migrator-wordpress</code> plugin.</p>
-<figure class="highlight lang-bash"><pre>$ npm install hexo-migrator-wordpress --save
+<figure class="highlight bash"><pre>$ npm install hexo-migrator-wordpress --save
 </pre></figure>
 
 <p>Once the plugin is installed, run the following command to migrate all posts from RSS. <code>source</code> can be the file path or URL.</p>
-<figure class="highlight lang-bash"><pre>$ hexo migrate wordpress &lt;source&gt;
+<figure class="highlight bash"><pre>$ hexo migrate wordpress &lt;<span class="built_in">source</span>&gt;
 </pre></figure>
 
 

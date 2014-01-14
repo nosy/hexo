@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <link rel="stylesheet" href="/hexo/css/style.css">
   <link href="//fonts.googleapis.com/css?family=Lato:300,700" rel="stylesheet" type="text/css">
+  <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:400,700' rel='stylesheet' type='text/css'>
   <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   
 <script type="text/javascript">
@@ -30,10 +31,14 @@
         <a href="/hexo/" id="logo">Hexo</a>
       </h1>
       <nav id="main-nav">
-        <ul>
+        <ul id="main-nav-list">
           
             <li class="main-nav-item">
               <a href="/hexo/docs/" class="main-nav-link current">Docs</a>
+            </li>
+          
+            <li class="main-nav-item">
+              <a href="/hexo/api/classes/Hexo.html" class="main-nav-link">API</a>
             </li>
           
             <li class="main-nav-item">
@@ -55,12 +60,12 @@
 </header>
   <article class="page">
   <header id="page-banner">
-    <div class="outer">
-      <div class="inner">
-        <h1 class="page-title">Tag Plugins</h1>
-      </div>
+  <div class="outer">
+    <div class="inner">
+      <h1 class="page-title">Tag Plugins</h1>
     </div>
-  </header>
+  </div>
+</header>
   <div class="outer">
     <div class="inner">
   <select id="page-mobile-menu">
@@ -131,66 +136,104 @@
   </select>
 </div>
     <div class="page-content">
+      <div class="toc-wrap">
+        <strong class="toc-title">Contents</strong>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#block-quote"><span class="toc-number">1.</span> <span class="toc-text">Block Quote</span></a></li><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#example"><span class="toc-number">1.1.</span> <span class="toc-text">Example</span></a></li></ol><li class="toc-item toc-level-2"><a class="toc-link" href="#code-block"><span class="toc-number">2.</span> <span class="toc-text">Code Block</span></a></li><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#example"><span class="toc-number">2.1.</span> <span class="toc-text">Example</span></a></li></ol><li class="toc-item toc-level-2"><a class="toc-link" href="#backtick-code-block"><span class="toc-number">3.</span> <span class="toc-text">Backtick Code Block</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#pull-quote"><span class="toc-number">4.</span> <span class="toc-text">Pull Quote</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#jsfiddle"><span class="toc-number">5.</span> <span class="toc-text">jsFiddle</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#gist"><span class="toc-number">6.</span> <span class="toc-text">Gist</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#image"><span class="toc-number">7.</span> <span class="toc-text">Image</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#link"><span class="toc-number">8.</span> <span class="toc-text">Link</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#include-code"><span class="toc-number">9.</span> <span class="toc-text">Include Code</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#youtube"><span class="toc-number">10.</span> <span class="toc-text">Youtube</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vimeo"><span class="toc-number">11.</span> <span class="toc-text">Vimeo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#raw"><span class="toc-number">12.</span> <span class="toc-text">Raw</span></a></li></ol>
+      </div>
       <div class="page-entry">
         <p>Tag plugins are different from tags in posts. They&#39;re ported from Octopress and can help you insert specific contents in posts quickly.</p>
-<h2>Block Quote</h2>
+<h2 id="block-quote">Block Quote</h2>
 <p>This plugin helps you insert quotes with author, source and title in posts.</p>
 <p><strong>Alias:</strong> quote</p>
-<figure class="highlight"><pre>{% blockquote [author[, source]] [link] [source_link_title] %}<br>content<br>{% endblockquote %}<br></pre></figure>
+<figure class="highlight"><pre>{% blockquote [author[, source]] [link] [source_link_title] %}
+content
+{% endblockquote %}
+</pre></figure>
 
 
-<h3>Example</h3>
+<h3 id="example">Example</h3>
 <p><strong>No arguments given. Only output plain blockquote</strong></p>
-<figure class="highlight"><pre>{% blockquote %}<br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque hendrerit lacus ut purus iaculis feugiat. Sed nec tempor elit, quis aliquam neque. Curabitur sed diam eget dolor fermentum semper at eu lorem.<br>{% endblockquote %}<br></pre></figure>
+<figure class="highlight"><pre>{% blockquote %}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque hendrerit lacus ut purus iaculis feugiat. Sed nec tempor elit, quis aliquam neque. Curabitur sed diam eget dolor fermentum semper at eu lorem. 
+{% endblockquote %}
+</pre></figure>
+
 
 <blockquote><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque hendrerit lacus ut purus iaculis feugiat. Sed nec tempor elit, quis aliquam neque. Curabitur sed diam eget dolor fermentum semper at eu lorem. </p>
 </blockquote>
 
 
 <p><strong>Quote from a book</strong></p>
-<figure class="highlight"><pre>{% blockquote David Levithan, Wide Awake %}<br>Do not just seek happiness for yourself. Seek happiness for all. Through kindness. Through mercy.<br>{% endblockquote %}<br></pre></figure>
+<figure class="highlight"><pre>{% blockquote David Levithan, Wide Awake %}
+Do not just seek happiness for yourself. Seek happiness for all. Through kindness. Through mercy.
+{% endblockquote %}
+</pre></figure>
+
 
 <blockquote><p>Do not just seek happiness for yourself. Seek happiness for all. Through kindness. Through mercy.</p>
 <footer><strong>David Levithan</strong><cite>Wide Awake</cite></footer></blockquote>
 
 
 <p><strong>Quote from Twitter</strong></p>
-<figure class="highlight"><pre>{% blockquote @DevDocs <a href="https://twitter.com/devdocs/status/356095192085962752" target="_blank">https://twitter.com/devdocs/status/356095192085962752</a> %}<br>NEW: DevDocs now comes with syntax highlighting. <a href="http://devdocs.io" target="_blank">http://devdocs.io</a><br>{% endblockquote %}<br></pre></figure>
+<figure class="highlight"><pre>{% blockquote @DevDocs <a href="https://twitter.com/devdocs/status/356095192085962752" target="_blank">https://twitter.com/devdocs/status/356095192085962752</a> %}
+NEW: DevDocs now comes with syntax highlighting. <a href="http://devdocs.io" target="_blank">http://devdocs.io</a>
+{% endblockquote %}
+</pre></figure>
+
 
 <blockquote><p>NEW: DevDocs now comes with syntax highlighting. <a href="http://devdocs.io" target="_blank">http://devdocs.io</a></p>
 <footer><strong>@DevDocs</strong><cite><a href="https://twitter.com/devdocs/status/356095192085962752" target="_blank">twitter.com/devdocs/status/&hellip;</a></cite></footer></blockquote>
 
 
 <p><strong>Quote from an article on the web</strong></p>
-<figure class="highlight"><pre>{% blockquote Seth Godin <a href="http://sethgodin.typepad.com/seths_blog/2009/07/welcome-to-island-marketing.html" target="_blank">http://sethgodin.typepad.com/seths_blog/2009/07/welcome-to-island-marketing.html</a> Welcome to Island Marketing %}<br>Every interaction is both precious and an opportunity to delight.<br>{% endblockquote %}<br></pre></figure>
+<figure class="highlight"><pre>{% blockquote Seth Godin <a href="http://sethgodin.typepad.com/seths_blog/2009/07/welcome-to-island-marketing.html" target="_blank">http://sethgodin.typepad.com/seths_blog/2009/07/welcome-to-island-marketing.html</a> Welcome to Island Marketing %}
+Every interaction is both precious and an opportunity to delight.
+{% endblockquote %}
+</pre></figure>
+
 
 <blockquote><p>Every interaction is both precious and an opportunity to delight.</p>
 <footer><strong>Seth Godin</strong><cite><a href="http://sethgodin.typepad.com/seths_blog/2009/07/welcome-to-island-marketing.html" target="_blank">Welcome to Island Marketing</a></cite></footer></blockquote>
 
 
-<h2>Code Block</h2>
+<h2 id="code-block">Code Block</h2>
 <p>This plugins helps you insert code snippets in posts.</p>
 <p><strong>Alias:</strong> code</p>
-<figure class="highlight"><pre>{% codeblock [title] [lang:language] [url] [link text] %}<br>code snippet<br>{% endcodeblock %}<br></pre></figure>
+<figure class="highlight"><pre>{% codeblock [title] [lang:language] [url] [link text] %}
+code snippet
+{% endcodeblock %}
+</pre></figure>
 
 
-<h3>Example</h3>
+<h3 id="example">Example</h3>
 <p><strong>A normal code block</strong></p>
-<figure class="highlight"><pre>{% codeblock %}<br>alert(&#39;Hello World!&#39;);<br>{% endcodeblock %}<br></pre></figure>
+<figure class="highlight"><pre>{% codeblock %}
+alert(&#39;Hello World!&#39;);
+{% endcodeblock %}
+</pre></figure>
 
-<figure class="highlight"><pre><span class="function"><span class="title">alert</span><span class="params">('<span class="variable">Hello</span> <span class="variable">World</span>!')</span>;
+
+<figure class="highlight"><pre><span class="function">alert(<span class="string">'Hello World!'</span>)</span>;
 </pre></figure>
 
 
 <p><strong>Specify language</strong></p>
-<figure class="highlight"><pre>{% codeblock lang:objc %}<br>[rectangle setX: 10 y: 10 width: 20 height: 20];<br>{% endcodeblock %}<br></pre></figure>
+<figure class="highlight"><pre>{% codeblock lang:objc %}
+[rectangle setX: 10 y: 10 width: 20 height: 20];
+{% endcodeblock %}
+</pre></figure>
 
-<figure class="highlight lang-objc"><pre>[rectangle <span class="method">setX:</span> <span class="number">10</span> <span class="method">y:</span> <span class="number">10</span> <span class="method">width:</span> <span class="number">20</span> <span class="method">height:</span> <span class="number">20</span>];
+
+<figure class="highlight objc"><pre><span class="title">[rectangle setX: 10 y: 10 width: 20 height: 20]</span><span class="comment">;</span>
 </pre></figure>
 
 
 <p><strong>Add caption to code block</strong></p>
-<figure class="highlight"><pre>{% codeblock Array.map %}<br>array.map(callback[, thisArg])<br>{% endcodeblock %}<br></pre></figure>
+<figure class="highlight"><pre>{% codeblock Array.map %}
+array.map(callback[, thisArg])
+{% endcodeblock %}
+</pre></figure>
+
 
 <figure class="highlight"><figcaption><span>Array.map</span></figcaption><pre><span class="keyword">array</span>.<span class="keyword">map</span>(callback[, thisArg])
 </pre></figure>
@@ -198,14 +241,18 @@
 
 <p><strong>Add caption with an optional URL</strong></p>
 <figure class="highlight"><pre>{% codeblock <em>.compact <a href="http://underscorejs.org/#compact" target="_blank">http://underscorejs.org/#compact</a> Underscore.js %}
-</em>.compact([0, 1, false, 2, ‘’, 3]);<br>=&gt; [1, 2, 3]<br>{% endcodeblock %}<br></pre></figure>
-
-<figure class="highlight"><figcaption><span>_.compact</span><a href="http://underscorejs.org/#compact" target="_blank">Underscore.js</a></figcaption><pre><span class="transposed_variable">_.</span>compact(<span class="matrix">[<span class="number">0</span>, <span class="number">1</span>, false, <span class="number">2</span>, <span class="string">''</span>, <span class="number">3</span>]</span>);
-=&gt; <span class="matrix">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span>
+</em>.compact([0, 1, false, 2, &#39;&#39;, 3]);
+=&gt; [1, 2, 3]
+{% endcodeblock %}
 </pre></figure>
 
 
-<h2>Backtick Code Block</h2>
+<figure class="highlight"><figcaption><span>_.compact</span><a href="http://underscorejs.org/#compact" target="_blank">Underscore.js</a></figcaption><pre>_.compact([<span class="number">0</span>, <span class="number">1</span>, <span class="keyword">false</span>, <span class="number">2</span>, <span class="string">''</span>, <span class="number">3</span>]);
+=&gt; [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]
+</pre></figure>
+
+
+<h2 id="backtick-code-block">Backtick Code Block</h2>
 <p>This plugin is same as code block, but in backtick style.</p>
 <figure class="highlight"><pre>``` <span class="attr_selector">[language]</span> <span class="attr_selector">[title]</span> <span class="attr_selector">[url]</span> <span class="attr_selector">[link text]</span>
 <span class="tag">code</span> <span class="tag">snippet</span>
@@ -213,49 +260,62 @@
 </pre></figure>
 
 
-<h2>Pull Quote</h2>
+<h2 id="pull-quote">Pull Quote</h2>
 <p>This plugin helps you insert a pull quote in posts.</p>
-<figure class="highlight"><pre>{% pullquote [class] %}<br>content<br>{% endpullquote %}<br></pre></figure>
+<figure class="highlight"><pre>{% pullquote [class] %}
+content
+{% endpullquote %}
+</pre></figure>
 
 
-<h2>jsFiddle</h2>
+<h2 id="jsfiddle">jsFiddle</h2>
 <p>This plugin helps you embed jsFiddle snippets in posts.</p>
-<figure class="highlight"><pre>{% jsfiddle shorttag [tabs] [skin] [width] [height] %}<br></pre></figure>
+<figure class="highlight"><pre>{% jsfiddle shorttag [tabs] [skin] [width] [height] %}
+</pre></figure>
 
 
-<h2>Gist</h2>
+<h2 id="gist">Gist</h2>
 <p>This plugin helps you embed Gist snippets in posts.</p>
-<figure class="highlight"><pre>{% gist gist_id [filename] %}<br></pre></figure>
+<figure class="highlight"><pre>{% gist gist_id [filename] %}
+</pre></figure>
 
 
-<h2>Image</h2>
+<h2 id="image">Image</h2>
 <p>This plugin helps you insert an image in posts with specified size.</p>
-<figure class="highlight"><pre>{% img [class names] /path/to/image [width] [height] [title text [alt text]] %}<br></pre></figure>
+<figure class="highlight"><pre>{% img [class names] /path/to/image [width] [height] [title text [alt text]] %}
+</pre></figure>
 
 
-<h2>Link</h2>
+<h2 id="link">Link</h2>
 <p>This plugin helps you insert a link with <code>target=&quot;_blank&quot;</code> attribute.</p>
-<figure class="highlight"><pre>{% link text url [external] [title] %}<br></pre></figure>
+<figure class="highlight"><pre>{% link text url [external] [title] %}
+</pre></figure>
 
 
-<h2>Include Code</h2>
+<h2 id="include-code">Include Code</h2>
 <p>This plugins helps you insert code snippets in <code>source</code> folder.</p>
-<figure class="highlight"><pre>{% include_code [title] [lang:language] path/to/file %}<br></pre></figure>
+<figure class="highlight"><pre>{% include_code [title] [lang:language] path/to/file %}
+</pre></figure>
 
 
-<h2>Youtube</h2>
+<h2 id="youtube">Youtube</h2>
 <p>This plugin helps you insert a Youtube video in posts.</p>
-<figure class="highlight"><pre>{% youtube video_id %}<br></pre></figure>
+<figure class="highlight"><pre>{% youtube video_id %}
+</pre></figure>
 
 
-<h2>Vimeo</h2>
+<h2 id="vimeo">Vimeo</h2>
 <p>This plugin helps you insert a Vimeo video in posts.</p>
-<figure class="highlight"><pre>{% vimeo video_id %}<br></pre></figure>
+<figure class="highlight"><pre>{% vimeo video_id %}
+</pre></figure>
 
 
-<h2>Raw</h2>
-<p>If there‘re some contents can’t be processed in posts, you can wrapped it with <code>rawblock</code> tag.</p>
-<figure class="highlight"><pre>{% rawblock %}<br>content<br>{% endrawblock /%}<br></pre></figure>
+<h2 id="raw">Raw</h2>
+<p>If there&#39;re some contents can&#39;t be processed in posts, you can wrapped it with <code>rawblock</code> tag.</p>
+<figure class="highlight"><pre>{% rawblock %}
+content
+{% endrawblock /%}
+</pre></figure>
 
       </div>
       <footer id="page-footer">

@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <link rel="stylesheet" href="/hexo/css/style.css">
   <link href="//fonts.googleapis.com/css?family=Lato:300,700" rel="stylesheet" type="text/css">
+  <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:400,700' rel='stylesheet' type='text/css'>
   <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   
 <script type="text/javascript">
@@ -30,10 +31,14 @@
         <a href="/hexo/" id="logo">Hexo</a>
       </h1>
       <nav id="main-nav">
-        <ul>
+        <ul id="main-nav-list">
           
             <li class="main-nav-item">
               <a href="/hexo/docs/" class="main-nav-link current">Docs</a>
+            </li>
+          
+            <li class="main-nav-item">
+              <a href="/hexo/api/classes/Hexo.html" class="main-nav-link">API</a>
             </li>
           
             <li class="main-nav-item">
@@ -55,12 +60,12 @@
 </header>
   <article class="page">
   <header id="page-banner">
-    <div class="outer">
-      <div class="inner">
-        <h1 class="page-title">Server</h1>
-      </div>
+  <div class="outer">
+    <div class="inner">
+      <h1 class="page-title">Server</h1>
     </div>
-  </header>
+  </div>
+</header>
   <div class="outer">
     <div class="inner">
   <select id="page-mobile-menu">
@@ -131,14 +136,18 @@
   </select>
 </div>
     <div class="page-content">
+      <div class="toc-wrap">
+        <strong class="toc-title">Contents</strong>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#express"><span class="toc-number">1.</span> <span class="toc-text">Express</span></a></li><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#static-mode"><span class="toc-number">1.1.</span> <span class="toc-text">Static Mode</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#drafts"><span class="toc-number">1.2.</span> <span class="toc-text">Drafts</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#logger"><span class="toc-number">1.3.</span> <span class="toc-text">Logger</span></a></li></ol><li class="toc-item toc-level-2"><a class="toc-link" href="#pow"><span class="toc-number">2.</span> <span class="toc-text">Pow</span></a></li><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#install"><span class="toc-number">2.1.</span> <span class="toc-text">Install</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#setup"><span class="toc-number">2.2.</span> <span class="toc-text">Setup</span></a></li></ol>
+      </div>
       <div class="page-entry">
-        <h2>Express</h2>
+        <h2 id="express">Express</h2>
 <p>To start server, run the following command:</p>
-<figure class="highlight lang-bash"><pre>$ hexo server
+<figure class="highlight bash"><pre>$ hexo server
 </pre></figure>
 
 <p>Your website will running at <code>http://localhost:4000</code>. You can edit the server port in <code>_config.yml</code> or use flags to override the default port. For example:</p>
-<figure class="highlight lang-bash"><pre>$ hexo server -p 5000
+<figure class="highlight bash"><pre>$ hexo server -p <span class="number">5000</span>
 </pre></figure>
 
 <p>Server will watch for file changes and update automatically. However, server won&#39;t update files in <code>public</code> folder. You should run <code>hexo generate</code> instead.</p>
@@ -146,24 +155,24 @@
 </blockquote>
 
 
-<h3>Static Mode</h3>
+<h3 id="static-mode">Static Mode</h3>
 <p>In static mode, only files in <code>public</code> folder will be served and file watching is disabled. You have to run <code>hexo generate</code> before starting the server. Usually used in production.</p>
-<figure class="highlight lang-bash"><pre>$ hexo server -s
+<figure class="highlight bash"><pre>$ hexo server <span class="operator">-s</span>
 </pre></figure>
 
-<h3>Drafts</h3>
+<h3 id="drafts">Drafts</h3>
 <p>In draft mode, drafts will be served as normal posts. You can preview your drafts on the server. All changes you made on drafts will be updated at once.</p>
-<figure class="highlight lang-bash"><pre>$ hexo server -d
+<figure class="highlight bash"><pre>$ hexo server <span class="operator">-d</span>
 </pre></figure>
 
-<h3>Logger</h3>
+<h3 id="logger">Logger</h3>
 <p>To log requests of server, you can enable logger in <code>_config.yml</code>. Logger is always enabled in debug mode.</p>
-<figure class="highlight lang-yaml"><pre><span class="attribute">logger</span>: <span class="string">true</span>
+<figure class="highlight yaml"><pre><span class="attribute">logger</span>: <span class="string">true</span>
 <span class="attribute">logger_format</span>: <span class="string">default</span>
 </pre></figure>
 
 <p>Or use flags to override default settings. For example:</p>
-<figure class="highlight lang-bash"><pre>$ hexo server -l default
+<figure class="highlight bash"><pre>$ hexo server <span class="operator">-l</span> default
 </pre></figure>
 
 <p><strong>Pre-defined formats:</strong></p>
@@ -177,7 +186,7 @@
 <tbody>
 <tr>
 <td><code>default</code></td>
-<td>:remote-addr - - [:date] “:method :url HTTP/:http-version” :status :res[content-length] “:referrer” “:user-agent”</td>
+<td>:remote-addr - - [:date] &quot;:method :url HTTP/:http-version&quot; :status :res[content-length] &quot;:referrer&quot; &quot;:user-agent&quot;</td>
 </tr>
 <tr>
 <td><code>short</code></td>
@@ -248,17 +257,17 @@
 </tr>
 </tbody>
 </table>
-<h2>Pow</h2>
+<h2 id="pow">Pow</h2>
 <p><a href="http://pow.cx/" target="_blank">Pow</a> is a zero-config Rack server for Mac powered by Node.js.</p>
-<h3>Install</h3>
+<h3 id="install">Install</h3>
 <p>Run the following command:</p>
-<figure class="highlight lang-bash"><pre>$ curl get.pow.cx | sh
+<figure class="highlight bash"><pre>$ curl get.pow.cx | sh
 </pre></figure>
 
-<h3>Setup</h3>
+<h3 id="setup">Setup</h3>
 <p>Symlink the folder into <code>~/.pow</code></p>
-<figure class="highlight lang-bash"><pre>$ cd ~/.pow
-$ ln -s /path/to/myapp
+<figure class="highlight bash"><pre>$ <span class="built_in">cd</span> ~/.pow
+$ ln <span class="operator">-s</span> /path/to/myapp
 </pre></figure>
 
 <p>Your website will be up and running at <code>http://myapp.dev</code>. The URL is based on the name of symlink.</p>

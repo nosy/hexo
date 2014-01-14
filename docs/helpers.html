@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <link rel="stylesheet" href="/hexo/css/style.css">
   <link href="//fonts.googleapis.com/css?family=Lato:300,700" rel="stylesheet" type="text/css">
+  <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:400,700' rel='stylesheet' type='text/css'>
   <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   
 <script type="text/javascript">
@@ -30,10 +31,14 @@
         <a href="/hexo/" id="logo">Hexo</a>
       </h1>
       <nav id="main-nav">
-        <ul>
+        <ul id="main-nav-list">
           
             <li class="main-nav-item">
               <a href="/hexo/docs/" class="main-nav-link current">Docs</a>
+            </li>
+          
+            <li class="main-nav-item">
+              <a href="/hexo/api/classes/Hexo.html" class="main-nav-link">API</a>
             </li>
           
             <li class="main-nav-item">
@@ -55,12 +60,12 @@
 </header>
   <article class="page">
   <header id="page-banner">
-    <div class="outer">
-      <div class="inner">
-        <h1 class="page-title">Helpers</h1>
-      </div>
+  <div class="outer">
+    <div class="inner">
+      <h1 class="page-title">Helpers</h1>
     </div>
-  </header>
+  </div>
+</header>
   <div class="outer">
     <div class="inner">
   <select id="page-mobile-menu">
@@ -131,15 +136,19 @@
   </select>
 </div>
     <div class="page-content">
+      <div class="toc-wrap">
+        <strong class="toc-title">Contents</strong>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#css"><span class="toc-number">1.</span> <span class="toc-text">css</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#js"><span class="toc-number">2.</span> <span class="toc-text">js</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#conditional-tags"><span class="toc-number">3.</span> <span class="toc-text">Conditional Tags</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#gravatar"><span class="toc-number">4.</span> <span class="toc-text">gravatar</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#trim"><span class="toc-number">5.</span> <span class="toc-text">trim</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#strip_html"><span class="toc-number">6.</span> <span class="toc-text">strip_html</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#titlecase"><span class="toc-number">7.</span> <span class="toc-text">titlecase</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#partial"><span class="toc-number">8.</span> <span class="toc-text">partial</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#tagcloud"><span class="toc-number">9.</span> <span class="toc-text">tagcloud</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#paginator"><span class="toc-number">10.</span> <span class="toc-text">paginator</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#date"><span class="toc-number">11.</span> <span class="toc-text">date</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#date_xml"><span class="toc-number">12.</span> <span class="toc-text">date_xml</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#time"><span class="toc-number">13.</span> <span class="toc-text">time</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#full_date"><span class="toc-number">14.</span> <span class="toc-text">full_date</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#moment"><span class="toc-number">15.</span> <span class="toc-text">moment</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#search_form"><span class="toc-number">16.</span> <span class="toc-text">search_form</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#markdown"><span class="toc-number">17.</span> <span class="toc-text">markdown</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#word_wrap"><span class="toc-number">18.</span> <span class="toc-text">word_wrap</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#truncate"><span class="toc-number">19.</span> <span class="toc-text">truncate</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#truncate_words"><span class="toc-number">20.</span> <span class="toc-text">truncate_words</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#link_to"><span class="toc-number">21.</span> <span class="toc-text">link_to</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#mail_to"><span class="toc-number">22.</span> <span class="toc-text">mail_to</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#list_categories"><span class="toc-number">23.</span> <span class="toc-text">list_categories</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#list_tags"><span class="toc-number">24.</span> <span class="toc-text">list_tags</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#list_archives"><span class="toc-number">25.</span> <span class="toc-text">list_archives</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#number_format"><span class="toc-number">26.</span> <span class="toc-text">number_format</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#open_graph"><span class="toc-number">27.</span> <span class="toc-text">open_graph</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#toc"><span class="toc-number">28.</span> <span class="toc-text">toc</span></a></li></ol>
+      </div>
       <div class="page-entry">
         <p>Helpers help you inserts specified content in theme or processes contents in theme quickly.</p>
-<h3>css</h3>
-<p>Loads CSS files. <code>path</code> can be an array or a string. If <code>path</code> isn&#39;t prefixed with <code>/</code> or any protocol, it‘ll be prefixed with root URL. If you didn’t add extension name <code>.css</code> after <code>path</code>, it&#39;ll be added.</p>
-<figure class="highlight lang-js"><pre>&lt;%- css(path, [path1], [path2], [...]) %&gt;
+<h3 id="css">css</h3>
+<p>Loads CSS files. <code>path</code> can be an array or a string. If <code>path</code> isn&#39;t prefixed with <code>/</code> or any protocol, it&#39;ll be prefixed with root URL. If you didn&#39;t add extension name <code>.css</code> after <code>path</code>, it&#39;ll be added.</p>
+<figure class="highlight js"><pre>&lt;%- css(path, ...) %&gt;
 </pre></figure>
 
 <p><strong>Examples:</strong></p>
-<figure class="highlight lang-js"><pre>&lt;%- css(<span class="string">'style.css'</span>) %&gt;
+<figure class="highlight js"><pre>&lt;%- css(<span class="string">'style.css'</span>) %&gt;
 <span class="comment">// &lt;link rel="stylesheet" href="/style.css" type="text/css"&gt;</span>
 
 &lt;%- css([<span class="string">'style.css'</span>, <span class="string">'screen.css'</span>]) %&gt;
@@ -147,13 +156,13 @@
 <span class="comment">// &lt;link rel="stylesheet" href="/screen.css" type="text/css"&gt;</span>
 </pre></figure>
 
-<h3>js</h3>
-<p>Loads JavaScript files. <code>path</code> can be an array or a string. If <code>path</code> isn&#39;t prefixed with <code>/</code> or any protocol, it‘ll be prefixed with root URL. If you didn’t add extension name <code>.js</code> after <code>path</code>, it&#39;ll be added.</p>
-<figure class="highlight lang-js"><pre>&lt;%- js(path, [path1], [path2], [...]) %&gt;
+<h3 id="js">js</h3>
+<p>Loads JavaScript files. <code>path</code> can be an array or a string. If <code>path</code> isn&#39;t prefixed with <code>/</code> or any protocol, it&#39;ll be prefixed with root URL. If you didn&#39;t add extension name <code>.js</code> after <code>path</code>, it&#39;ll be added.</p>
+<figure class="highlight js"><pre>&lt;%- js(path, ...) %&gt;
 </pre></figure>
 
 <p><strong>Examples:</strong></p>
-<figure class="highlight lang-js"><pre>&lt;%- js(<span class="string">'script.js'</span>) %&gt;
+<figure class="highlight js"><pre>&lt;%- js(<span class="string">'script.js'</span>) %&gt;
 <span class="comment">// &lt;script type="text/javascript" src="/script.js"&gt;&lt;/script&gt;</span>
 
 &lt;%- js([<span class="string">'script.js'</span>, <span class="string">'gallery.js'</span>]) %&gt;
@@ -161,7 +170,7 @@
 <span class="comment">// &lt;script type="text/javascript" src="/gallery.js"&gt;&lt;/script&gt;</span>
 </pre></figure>
 
-<h3>Conditional Tags</h3>
+<h3 id="conditional-tags">Conditional Tags</h3>
 <p>Conditional tags help you check the status of current page.</p>
 <table>
 <thead>
@@ -172,7 +181,7 @@
 </thead>
 <tbody>
 <tr>
-<td><code>is_current(path, strict)</code></td>
+<td><code>is_current(path, [strict])</code></td>
 <td>Checks if <code>path</code> matches the URL of current page.</td>
 </tr>
 <tr>
@@ -205,52 +214,52 @@
 </tr>
 </tbody>
 </table>
-<h3>gravatar</h3>
+<h3 id="gravatar">gravatar</h3>
 <p>Inserts a Gravatar image.</p>
-<figure class="highlight lang-js"><pre>&lt;%- gravatar(email, [size]);
+<figure class="highlight js"><pre>&lt;%- gravatar(email, [size]);
 </pre></figure>
 
 <p><strong>Examples:</strong></p>
-<figure class="highlight lang-js"><pre>&lt;%- gravatar(<span class="string">'a@abc.com'</span>) %&gt;
+<figure class="highlight js"><pre>&lt;%- gravatar(<span class="string">'a@abc.com'</span>) %&gt;
 <span class="comment">// http://www.gravatar.com/avatar/b9b00e66c6b8a70f88c73cb6bdb06787</span>
 
 &lt;%- gravatar(<span class="string">'a@abc.com'</span>, <span class="number">40</span>) %&gt;
 <span class="comment">// http://www.gravatar.com/avatar/b9b00e66c6b8a70f88c73cb6bdb06787?s=40</span>
 </pre></figure>
 
-<h3>trim</h3>
+<h3 id="trim">trim</h3>
 <p>Clears all spaces in a string.</p>
-<figure class="highlight lang-js"><pre>&lt;%- trim(string) %&gt;
+<figure class="highlight js"><pre>&lt;%- trim(string) %&gt;
 </pre></figure>
 
-<h3>strip_html</h3>
+<h3 id="strip_html">strip_html</h3>
 <p>Sanitizes all HTML tags in a string.</p>
-<figure class="highlight lang-js"><pre>&lt;%- strip_html(string) %&gt;
+<figure class="highlight js"><pre>&lt;%- strip_html(string) %&gt;
 </pre></figure>
 
 <p><strong>Examples:</strong></p>
-<figure class="highlight lang-js"><pre>&lt;%- strip_html('It's not &lt;b&gt;important&lt;/b&gt; anymore!') %&gt;
+<figure class="highlight js"><pre>&lt;%- strip_html('It's not &lt;b&gt;important&lt;/b&gt; anymore!') %&gt;
 // It's not important anymore!
 </pre></figure>
 
-<h3>titlecase</h3>
+<h3 id="titlecase">titlecase</h3>
 <p>Transforms a string into proper title caps.</p>
-<figure class="highlight lang-js"><pre>&lt;%- titlecase(string) %&gt;
+<figure class="highlight js"><pre>&lt;%- titlecase(string) %&gt;
 </pre></figure>
 
 <p><strong>Examples:</strong></p>
-<figure class="highlight lang-js"><pre>&lt;%- titlecase(<span class="string">'this is an apple'</span>) %&gt;
+<figure class="highlight js"><pre>&lt;%- titlecase(<span class="string">'this is an apple'</span>) %&gt;
 # This is an Apple
 </pre></figure>
 
-<h3>partial</h3>
+<h3 id="partial">partial</h3>
 <p>Loads other template files. You can define local variables in <code>local</code>.</p>
-<figure class="highlight lang-js"><pre>&lt;%- partial(layout, [locals]) %&gt;
+<figure class="highlight js"><pre>&lt;%- partial(layout, [locals]) %&gt;
 </pre></figure>
 
-<h3>tagcloud</h3>
+<h3 id="tagcloud">tagcloud</h3>
 <p>Inserts a tag cloud.</p>
-<figure class="highlight lang-js"><pre>&lt;%- tagcloud([tags], [options]) %&gt;
+<figure class="highlight js"><pre>&lt;%- tagcloud([tags], [options]) %&gt;
 </pre></figure>
 
 <table>
@@ -309,9 +318,9 @@
 </tr>
 </tbody>
 </table>
-<h3>paginator</h3>
+<h3 id="paginator">paginator</h3>
 <p>Inserts a paginator.</p>
-<figure class="highlight lang-js"><pre>&lt;%- paginator(options) %&gt;
+<figure class="highlight js"><pre>&lt;%- paginator(options) %&gt;
 </pre></figure>
 
 <table>
@@ -380,60 +389,60 @@
 </tr>
 </tbody>
 </table>
-<h3>date</h3>
+<h3 id="date">date</h3>
 <p>Inserts formatted date. <code>date</code> can be unix time, ISO string, date object, or moment.js object. <code>format</code> is <code>date_format</code> setting by default.</p>
-<figure class="highlight lang-js"><pre>&lt;%- date(date, [format]) %&gt;
+<figure class="highlight js"><pre>&lt;%- date(date, [format]) %&gt;
 </pre></figure>
 
 <p><strong>Examples:</strong></p>
-<figure class="highlight lang-js"><pre>&lt;%- date(Date.now()) %&gt;
+<figure class="highlight js"><pre>&lt;%- date(<span class="built_in">Date</span>.now()) %&gt;
 <span class="comment">// Jan 1, 2013</span>
 
-&lt;%- date(Date.now(), <span class="string">'YYYY/M/D'</span>) %&gt;
+&lt;%- date(<span class="built_in">Date</span>.now(), <span class="string">'YYYY/M/D'</span>) %&gt;
 <span class="comment">// 2013/1/1</span>
 </pre></figure>
 
-<h3>date_xml</h3>
+<h3 id="date_xml">date_xml</h3>
 <p>Inserts date in XML format. <code>date</code> can be unix time, ISO string, date object, or moment.js object. <code>format</code> is <code>date_format</code> setting by default.</p>
-<figure class="highlight lang-js"><pre>&lt;%- date_xml(date) %&gt;
+<figure class="highlight js"><pre>&lt;%- date_xml(date) %&gt;
 </pre></figure>
 
 <p><strong>Examples:</strong></p>
-<figure class="highlight lang-js"><pre>&lt;%- date_xml(Date.now()) %&gt;
+<figure class="highlight js"><pre>&lt;%- date_xml(<span class="built_in">Date</span>.now()) %&gt;
 <span class="comment">// 2013-01-01T00:00:00.000Z</span>
 </pre></figure>
 
-<h3>time</h3>
+<h3 id="time">time</h3>
 <p>Inserts formatted time. <code>date</code> can be unix time, ISO string, date object, or moment.js object. <code>format</code> is <code>time_format</code> setting by default.</p>
-<figure class="highlight lang-js"><pre>&lt;%- date(date, [format]) %&gt;
+<figure class="highlight js"><pre>&lt;%- time(date, [format]) %&gt;
 </pre></figure>
 
 <p><strong>Examples:</strong></p>
-<figure class="highlight lang-js"><pre>&lt;%- time(Date.now()) %&gt;
+<figure class="highlight js"><pre>&lt;%- time(<span class="built_in">Date</span>.now()) %&gt;
 <span class="comment">// 13:05:12</span>
 
-&lt;%- time(Date.now(), <span class="string">'h:mm:ss a'</span>) %&gt;
+&lt;%- time(<span class="built_in">Date</span>.now(), <span class="string">'h:mm:ss a'</span>) %&gt;
 <span class="comment">// 1:05:12 pm</span>
 </pre></figure>
 
-<h3>full_date</h3>
+<h3 id="full_date">full_date</h3>
 <p>Inserts formatted date and time. <code>date</code> can be unix time, ISO string, date object, or moment.js object. <code>format</code> is <code>date_format + time_format</code> setting by default.</p>
-<figure class="highlight lang-js"><pre>&lt;%- full_date(date, [format]) %&gt;
+<figure class="highlight js"><pre>&lt;%- full_date(date, [format]) %&gt;
 </pre></figure>
 
 <p><strong>Examples:</strong></p>
-<figure class="highlight lang-js"><pre>&lt;%- full_date(<span class="keyword">new</span> Date()) %&gt;
+<figure class="highlight js"><pre>&lt;%- full_date(<span class="keyword">new</span> <span class="built_in">Date</span>()) %&gt;
 <span class="comment">// Jan 1, 2013 0:00:00</span>
 
-&lt;%- full_date(<span class="keyword">new</span> Date(), <span class="string">'dddd, MMMM Do YYYY, h:mm:ss a'</span>) %&gt;
+&lt;%- full_date(<span class="keyword">new</span> <span class="built_in">Date</span>(), <span class="string">'dddd, MMMM Do YYYY, h:mm:ss a'</span>) %&gt;
 <span class="comment">// Tuesday, January 1st 2013, 12:00:00 am</span>
 </pre></figure>
 
-<h3>moment</h3>
+<h3 id="moment">moment</h3>
 <p>[Moment.js] library.</p>
-<h3>searh_form</h3>
+<h3 id="search_form">search_form</h3>
 <p>Inserts a Google search form.</p>
-<figure class="highlight lang-js"><pre>&lt;%- search_form(options) %&gt;
+<figure class="highlight js"><pre>&lt;%- search_form(options) %&gt;
 </pre></figure>
 
 <table>
@@ -462,53 +471,53 @@
 </tr>
 </tbody>
 </table>
-<h3>markdown</h3>
+<h3 id="markdown">markdown</h3>
 <p>Renders a string with Markdown.</p>
-<figure class="highlight lang-js"><pre>&lt;%- markdown(str) %&gt;
+<figure class="highlight js"><pre>&lt;%- markdown(str) %&gt;
 </pre></figure>
 
 <p><strong>Examples:</strong></p>
-<figure class="highlight lang-js"><pre>&lt;%- markdown(<span class="string">'make me **strong**'</span>) %&gt;
+<figure class="highlight js"><pre>&lt;%- markdown(<span class="string">'make me **strong**'</span>) %&gt;
 <span class="comment">// make me &lt;strong&gt;strong&lt;/strong&gt;</span>
 </pre></figure>
 
-<h3>word_wrap</h3>
+<h3 id="word_wrap">word_wrap</h3>
 <p>Wraps text into lines no longer than <code>length</code>. <code>length</code> is 80 by default.</p>
-<figure class="highlight lang-js"><pre>&lt;%- word_wrap(str, [length]) %&gt;
+<figure class="highlight js"><pre>&lt;%- word_wrap(str, [length]) %&gt;
 </pre></figure>
 
 <p><strong>Examples:</strong></p>
-<figure class="highlight lang-js"><pre>&lt;%- word_wrap(<span class="string">'Once upon a time'</span>, <span class="number">8</span>) %&gt;
+<figure class="highlight js"><pre>&lt;%- word_wrap(<span class="string">'Once upon a time'</span>, <span class="number">8</span>) %&gt;
 <span class="comment">// Once upon\n a time</span>
 </pre></figure>
 
-<h3>truncate</h3>
+<h3 id="truncate">truncate</h3>
 <p>Truncates text after <code>length</code>.</p>
-<figure class="highlight lang-js"><pre>&lt;%- truncate(text, length) %&gt;
+<figure class="highlight js"><pre>&lt;%- truncate(text, length) %&gt;
 </pre></figure>
 
 <p><strong>Examples:</strong></p>
-<figure class="highlight lang-js"><pre>&lt;%- truncate(<span class="string">'Once upon a time in a world far far away'</span>, <span class="number">16</span>) %&gt;
+<figure class="highlight js"><pre>&lt;%- truncate(<span class="string">'Once upon a time in a world far far away'</span>, <span class="number">16</span>) %&gt;
 <span class="comment">// Once upon a time</span>
 </pre></figure>
 
-<h3>truncate_words</h3>
+<h3 id="truncate_words">truncate_words</h3>
 <p>Truncates words after <code>length</code>.</p>
-<figure class="highlight lang-js"><pre>&lt;%- truncate_words(text, length) %&gt;
+<figure class="highlight js"><pre>&lt;%- truncate_words(text, length) %&gt;
 </pre></figure>
 
 <p><strong>Examples:</strong></p>
-<figure class="highlight lang-js"><pre>&lt;%- truncate_words(<span class="string">'Once upon a time in a world far far away'</span>, <span class="number">4</span>) %&gt;
+<figure class="highlight js"><pre>&lt;%- truncate_words(<span class="string">'Once upon a time in a world far far away'</span>, <span class="number">4</span>) %&gt;
 <span class="comment">// Once upon a time</span>
 </pre></figure>
 
-<h3>link_to</h3>
+<h3 id="link_to">link_to</h3>
 <p>Inserts a link.</p>
-<figure class="highlight lang-js"><pre>&lt;%- link_to(path, [text], [external]) %&gt;
+<figure class="highlight js"><pre>&lt;%- link_to(path, [text], [external]) %&gt;
 </pre></figure>
 
 <p><strong>Examples:</strong></p>
-<figure class="highlight lang-js"><pre>&lt;%- link_to(<span class="string">'http://www.google.com'</span>) %&gt;
+<figure class="highlight js"><pre>&lt;%- link_to(<span class="string">'http://www.google.com'</span>) %&gt;
 <span class="comment">// &lt;a href="http://www.google.com" title="http://www.google.com"&gt;http://www.google.com&lt;/a&gt;</span>
 
 &lt;%- link_to(<span class="string">'http://www.google.com'</span>, <span class="string">'Google'</span>) %&gt;
@@ -518,22 +527,22 @@
 <span class="comment">// &lt;a href="http://www.google.com" title="Google" target="_blank" rel="external"&gt;Google&lt;/a&gt;</span>
 </pre></figure>
 
-<h3>mail_to</h3>
+<h3 id="mail_to">mail_to</h3>
 <p>Inserts a mail link.</p>
-<figure class="highlight lang-js"><pre>&lt;%- mail_to(path, [text]) %&gt;
+<figure class="highlight js"><pre>&lt;%- mail_to(path, [text]) %&gt;
 </pre></figure>
 
 <p><strong>Examples:</strong></p>
-<figure class="highlight lang-js"><pre>&lt;%- mail_to(<span class="string">'a@abc.com'</span>) %&gt;
+<figure class="highlight js"><pre>&lt;%- mail_to(<span class="string">'a@abc.com'</span>) %&gt;
 <span class="comment">// &lt;a href="mailto:a@abc.com" title="a@abc.com"&gt;a@abc.com&lt;/a&gt;</span>
 
 &lt;%- mail_to(<span class="string">'a@abc.com'</span>, <span class="string">'Email'</span>) %&gt;
 <span class="comment">// &lt;a href="mailto:a@abc.com" title="Email"&gt;Email&lt;/a&gt;</span>
 </pre></figure>
 
-<h3>list_categories</h3>
+<h3 id="list_categories">list_categories</h3>
 <p>Inserts a list of all categories.</p>
-<figure class="highlight lang-js"><pre>&lt;%- list_categories([options]) %&gt;
+<figure class="highlight js"><pre>&lt;%- list_categories([options]) %&gt;
 </pre></figure>
 
 <table>
@@ -582,9 +591,9 @@
 </tr>
 </tbody>
 </table>
-<h3>list_tags</h3>
+<h3 id="list_tags">list_tags</h3>
 <p>Inserts a list of all tags.</p>
-<figure class="highlight lang-js"><pre>&lt;%- list_tags([options]) %&gt;
+<figure class="highlight js"><pre>&lt;%- list_tags([options]) %&gt;
 </pre></figure>
 
 <table>
@@ -628,9 +637,9 @@
 </tr>
 </tbody>
 </table>
-<h3>list_archives</h3>
+<h3 id="list_archives">list_archives</h3>
 <p>Inserts a list of archives.</p>
-<figure class="highlight lang-js"><pre>&lt;%- list_archive([options]) %&gt;
+<figure class="highlight js"><pre>&lt;%- list_archive([options]) %&gt;
 </pre></figure>
 
 <table>
@@ -679,9 +688,9 @@
 </tr>
 </tbody>
 </table>
-<h3>number_format</h3>
+<h3 id="number_format">number_format</h3>
 <p>Formats a number.</p>
-<figure class="highlight lang-js"><pre>&lt;%- number_format(number, options) %&gt;
+<figure class="highlight js"><pre>&lt;%- number_format(number, [options]) %&gt;
 </pre></figure>
 
 <table>
@@ -711,7 +720,7 @@
 </tbody>
 </table>
 <p><strong>Examples:</strong></p>
-<figure class="highlight lang-js"><pre>&lt;%- number_format(<span class="number">12345.67</span>, {precision: <span class="number">1</span>}) %&gt;
+<figure class="highlight js"><pre>&lt;%- number_format(<span class="number">12345.67</span>, {precision: <span class="number">1</span>}) %&gt;
 <span class="comment">// 12,345.68</span>
 
 &lt;%- number_format(<span class="number">12345.67</span>, {precision: <span class="number">4</span>}) %&gt;
@@ -727,10 +736,106 @@
 <span class="comment">// 12,345/67</span>
 </pre></figure>
 
+<h3 id="open_graph">open_graph</h3>
+<p>Inserts open graph data.</p>
+<figure class="highlight js"><pre>&lt;%- open_graph([options]) %&gt;
+</pre></figure>
+
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>title</code></td>
+<td>Page title (<code>og:title</code>)</td>
+<td><code>page.title</code></td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td>Page type (<code>og:type</code>)</td>
+<td>blog</td>
+</tr>
+<tr>
+<td><code>url</code></td>
+<td>Page URL (<code>og:url</code>)</td>
+<td><code>url</code></td>
+</tr>
+<tr>
+<td><code>image</code></td>
+<td>Page cover (<code>og:image</code>)</td>
+<td>First image in the content</td>
+</tr>
+<tr>
+<td><code>site_name</code></td>
+<td>Site name (<code>og:site_name</code>)</td>
+<td><code>config.title</code></td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td>Page description (<code>og:desription</code>)</td>
+<td>Page excerpt or first 200 characters of the content</td>
+</tr>
+<tr>
+<td><code>twitter_card</code></td>
+<td>Twitter card type (<code>twitter:card</code>)</td>
+<td>summary</td>
+</tr>
+<tr>
+<td><code>twitter_id</code></td>
+<td>Twitter ID (<code>twitter:creator</code>)</td>
+<td></td>
+</tr>
+<tr>
+<td><code>google_plus</code></td>
+<td>Google+ profile link</td>
+<td></td>
+</tr>
+<tr>
+<td><code>fb_admins</code></td>
+<td>Facebook admin ID</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="toc">toc</h3>
+<p>Parses all heading tags (h1~h6) in the content and inserts a table of contents.</p>
+<figure class="highlight js"><pre>&lt;%- toc(str, [options]) %&gt;
+</pre></figure>
+
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>class</code></td>
+<td>Class name</td>
+<td>toc</td>
+</tr>
+<tr>
+<td><code>list_number</code></td>
+<td>Displays list number</td>
+<td>true</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Examples:</strong></p>
+<figure class="highlight js"><pre>&lt;%- toc(page.content) %&gt;
+</pre></figure>
+
 
       </div>
       <footer id="page-footer">
-        <time id="page-footer-updated" datetime="2013-09-21T07:52:26.000Z">Last updated: Sep 21, 2013</time>
+        <time id="page-footer-updated" datetime="2014-01-13T05:15:11.000Z">Last updated: Jan 13, 2014</time>
         <a href="/hexo/docs/pagination.html" id="page-footer-prev" class="page-footer-link">Prev</a>
         <a href="/hexo/docs/i18n.html" id="page-footer-next" class="page-footer-link">Next</a>
       </footer>

@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <link rel="stylesheet" href="/hexo/css/style.css">
   <link href="//fonts.googleapis.com/css?family=Lato:300,700" rel="stylesheet" type="text/css">
+  <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:400,700' rel='stylesheet' type='text/css'>
   <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   
 <script type="text/javascript">
@@ -30,10 +31,14 @@
         <a href="/hexo/" id="logo">Hexo</a>
       </h1>
       <nav id="main-nav">
-        <ul>
+        <ul id="main-nav-list">
           
             <li class="main-nav-item">
               <a href="/hexo/docs/" class="main-nav-link current">Docs</a>
+            </li>
+          
+            <li class="main-nav-item">
+              <a href="/hexo/api/classes/Hexo.html" class="main-nav-link">API</a>
             </li>
           
             <li class="main-nav-item">
@@ -55,12 +60,12 @@
 </header>
   <article class="page">
   <header id="page-banner">
-    <div class="outer">
-      <div class="inner">
-        <h1 class="page-title">Internationalization (i18n)</h1>
-      </div>
+  <div class="outer">
+    <div class="inner">
+      <h1 class="page-title">Internationalization (i18n)</h1>
     </div>
-  </header>
+  </div>
+</header>
   <div class="outer">
     <div class="inner">
   <select id="page-mobile-menu">
@@ -131,14 +136,18 @@
   </select>
 </div>
     <div class="page-content">
+      <div class="toc-wrap">
+        <strong class="toc-title">Contents</strong>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#structure"><span class="toc-number">1.</span> <span class="toc-text">Structure</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#i18n-in-theme"><span class="toc-number">2.</span> <span class="toc-text">i18n in Theme</span></a></li></ol>
+      </div>
       <div class="page-entry">
         <p>Hexo has a simple i18n module built-in, which means you can make Hexo says your language!</p>
 <p>To enable i18n for Hexo, edit <code>language</code> setting. The language code must be written in <a href="http://www.w3.org/International/articles/language-tags/" target="_blank">IETF format</a>. For example: Traditional Chinese is <code>zh-TW</code>.</p>
-<figure class="highlight lang-yaml"><pre><span class="attribute">language</span>: <span class="string">zh-TW</span>
+<figure class="highlight yaml"><pre><span class="attribute">language</span>: <span class="string">zh-TW</span>
 </pre></figure>
 
-<h2>Structure</h2>
-<figure class="highlight lang-plain"><pre>.
+<h2 id="structure">Structure</h2>
+<figure class="highlight plain"><pre>.
 ├── default.yml
 └── zh-TW.yml
 </pre></figure>
@@ -148,13 +157,13 @@
 </blockquote>
 
 
-<h2>i18n in Theme</h2>
+<h2 id="i18n-in-theme">i18n in Theme</h2>
 <p>To use i18n in the theme. Use <code>__</code> (double underscores) with the key you set in language files.</p>
-<figure class="highlight lang-js"><pre>&lt;%= __(<span class="string">'key'</span>) %&gt;
+<figure class="highlight js"><pre>&lt;%= __(<span class="string">'key'</span>) %&gt;
 </pre></figure>
 
 <p>You can even pass more than one arguments:</p>
-<figure class="highlight lang-js"><pre>&lt;%= __(<span class="string">'Hello %s!'</span>, <span class="string">'World'</span>) %&gt;
+<figure class="highlight js"><pre>&lt;%= __(<span class="string">'Hello %s!'</span>, <span class="string">'World'</span>) %&gt;
 <span class="comment">// =&gt; Hello World!</span>
 </pre></figure>
 

@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <link rel="stylesheet" href="/hexo/css/style.css">
   <link href="//fonts.googleapis.com/css?family=Lato:300,700" rel="stylesheet" type="text/css">
+  <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:400,700' rel='stylesheet' type='text/css'>
   <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   
 <script type="text/javascript">
@@ -30,10 +31,14 @@
         <a href="/hexo/" id="logo">Hexo</a>
       </h1>
       <nav id="main-nav">
-        <ul>
+        <ul id="main-nav-list">
           
             <li class="main-nav-item">
               <a href="/hexo/docs/" class="main-nav-link current">Docs</a>
+            </li>
+          
+            <li class="main-nav-item">
+              <a href="/hexo/api/classes/Hexo.html" class="main-nav-link">API</a>
             </li>
           
             <li class="main-nav-item">
@@ -55,12 +60,12 @@
 </header>
   <article class="page">
   <header id="page-banner">
-    <div class="outer">
-      <div class="inner">
-        <h1 class="page-title">Deployment</h1>
-      </div>
+  <div class="outer">
+    <div class="inner">
+      <h1 class="page-title">Deployment</h1>
     </div>
-  </header>
+  </div>
+</header>
   <div class="outer">
     <div class="inner">
   <select id="page-mobile-menu">
@@ -131,15 +136,19 @@
   </select>
 </div>
     <div class="page-content">
+      <div class="toc-wrap">
+        <strong class="toc-title">Contents</strong>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#github"><span class="toc-number">1.</span> <span class="toc-text">GitHub</span></a></li><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#remove"><span class="toc-number">1.1.</span> <span class="toc-text">Remove</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#custom-domain"><span class="toc-number">1.2.</span> <span class="toc-text">Custom Domain</span></a></li></ol><li class="toc-item toc-level-2"><a class="toc-link" href="#heroku"><span class="toc-number">2.</span> <span class="toc-text">Heroku</span></a></li><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#remove"><span class="toc-number">2.1.</span> <span class="toc-text">Remove</span></a></li></ol><li class="toc-item toc-level-2"><a class="toc-link" href="#rsync"><span class="toc-number">3.</span> <span class="toc-text">Rsync</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#other-methods"><span class="toc-number">4.</span> <span class="toc-text">Other Methods</span></a></li></ol>
+      </div>
       <div class="page-entry">
         <p>To deploy your site with Hexo, you only need one command.</p>
-<figure class="highlight lang-bash"><pre>$ hexo deploy
+<figure class="highlight bash"><pre>$ hexo deploy
 </pre></figure>
 
-<h2>GitHub</h2>
+<h2 id="github">GitHub</h2>
 <p>Edit <code>_config.yml</code>.</p>
-<figure class="highlight lang-yaml"><pre><span class="title">deploy</span>:
-  <span class="typedef"><span class="keyword">type</span>: github</span>
+<figure class="highlight yaml"><pre>deploy:
+  <span class="class"><span class="keyword">type</span>: <span class="title">github</span></span>
   repository:
 </pre></figure>
 
@@ -157,14 +166,14 @@
 </tr>
 </tbody>
 </table>
-<h3>Remove</h3>
+<h3 id="remove">Remove</h3>
 <p>Remove <code>.deploy</code> folder.</p>
-<figure class="highlight lang-bash"><pre>$ rm -rf .deploy
+<figure class="highlight bash"><pre>$ rm -rf .deploy
 </pre></figure>
 
-<h3>Custom Domain</h3>
+<h3 id="custom-domain">Custom Domain</h3>
 <p>Create a file named <code>CNAME</code> in <code>source</code> folder with the following content.</p>
-<figure class="highlight"><pre><span class="filename">example.com
+<figure class="highlight"><pre>example<span class="preprocessor">.com</span>
 </pre></figure>
 
 <ul>
@@ -172,10 +181,10 @@
 <li><strong>Subdomain</strong>: Add CNAME record <code>blog.example.com</code>.</li>
 </ul>
 <p>Check <a href="https://help.github.com/articles/setting-up-a-custom-domain-with-pages" target="_blank">GitHub Pages</a> for more info.</p>
-<h2>Heroku</h2>
+<h2 id="heroku">Heroku</h2>
 <p>Edit <code>_config.yml</code>.</p>
-<figure class="highlight lang-yaml"><pre><span class="title">deploy</span>:
-  <span class="typedef"><span class="keyword">type</span>: heroku</span>
+<figure class="highlight yaml"><pre>deploy:
+  <span class="class"><span class="keyword">type</span>: <span class="title">heroku</span></span>
   repository:
 </pre></figure>
 
@@ -193,17 +202,17 @@
 </tr>
 </tbody>
 </table>
-<h3>Remove</h3>
+<h3 id="remove">Remove</h3>
 <p>Remove <code>.git</code>, <code>app.js</code> &amp; <code>Procfile</code>.</p>
-<h2>Rsync</h2>
+<h2 id="rsync">Rsync</h2>
 <p>Edit <code>_config.yml</code>.</p>
-<figure class="highlight lang-yaml"><pre><span class="method">deploy:</span>
-  <span class="method">type:</span> rsync
-  <span class="method">host:</span>
-  <span class="method">user:</span>
-  <span class="method">root:</span>
-  <span class="method">port:</span>
-  <span class="method">delete:</span>
+<figure class="highlight yaml"><pre>deploy:
+  <span class="class"><span class="keyword">type</span>: <span class="title">rsync</span></span>
+  host:
+  user:
+  root:
+  port:
+  delete:
 </pre></figure>
 
 <table>
@@ -242,7 +251,7 @@
 </tr>
 </tbody>
 </table>
-<h2>Other Methods</h2>
+<h2 id="other-methods">Other Methods</h2>
 <p>All generated files are saved in <code>public</code> folder. You can copy it to wherever you like.</p>
 
       </div>
