@@ -11,59 +11,59 @@ A fast, simple & powerful blog framework, powered by [Node.js](http://nodejs.org
 - [Plugins](https://github.com/tommy351/hexo/wiki/Plugins)
 - [Themes](https://github.com/tommy351/hexo/wiki/Themes)
 
-## Features
+## 功能
 
-### Blazing Fast
+### 速度极快
 
 Hexo is powered by Node.js and supports multi-thread generating. Hundreds of files take only seconds to generate.
 
-### Easy Write
+### 易写
 
 Hexo supports GitHub Flavored Markdown and all Octopress plugins and highly Jekyll/Octopress compatible.
 
-### Extensibility
+### 可扩展性
 
 Hexo supports EJS, Swig & Stylus. You can install more plugins for Haml, Jade, Less supports.
 
-## Quick Start
+## 快速入门
 
-**Install**
+**安装**
 
 ```
 $ npm install hexo -g
 ```
 
-**Update**
+**更新**
 
 ```
 $ npm update hexo -g
 ```
 
-**Setup**
+**设置**
 
 ```
 $ hexo init blog && cd blog
 ```
 
-**Create a new post**
+**发新帖**
 
 ```
 $ hexo new "Hello World"
 ```
 
-**Generate**
+**申城**
 
 ```
 $ hexo generate
 ```
 
-**Server**
+**服务器**
 
 ```
 $ hexo server
 ```
 
-## License
+## 证书
 
 (The MIT License)
 
