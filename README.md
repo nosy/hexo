@@ -51,7 +51,7 @@ $ hexo init blog && cd blog
 $ hexo new "Hello World"
 ```
 
-**申城**
+**生成**
 
 ```
 $ hexo generate
